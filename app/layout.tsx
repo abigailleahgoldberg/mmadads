@@ -4,14 +4,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
-    default: "MMA Dads | Women's MMA, Fight Night, Family MMA Culture",
-    template: "%s | MMA Dads",
+    default: "MMADADS.COM | Post-Bedtime MMA Coverage",
+    template: "%s | MMADADS",
   },
   description:
-    "For dads who love MMA and want to share the sport with their families. Women's MMA coverage, fight night guides, training tips, and more.",
+    "The card starts at 10pm. Kids are in bed. This is MMA coverage for dads who know every record and watch every prelim.",
   metadataBase: new URL("https://mmadads.com"),
   openGraph: {
-    siteName: "MMA Dads",
+    siteName: "MMADADS.COM",
     type: "website",
     locale: "en_US",
   },
@@ -28,16 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* NAV */}
         <header style={{
-          backgroundColor: "var(--dark)",
-          borderBottom: "2px solid var(--gold)",
+          backgroundColor: "#080E18",
+          borderBottom: "3px solid #D42B2B",
           padding: "0 1.5rem",
           position: "sticky",
           top: 0,
           zIndex: 100,
         }}>
           <nav style={{
-            maxWidth: "1100px",
+            maxWidth: "1200px",
             margin: "0 auto",
             display: "flex",
             alignItems: "center",
@@ -45,99 +46,111 @@ export default function RootLayout({
             height: "64px",
           }}>
             <Link href="/" style={{
-              color: "var(--cream)",
-              fontSize: "1.4rem",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              fontSize: "1.5rem",
+              color: "#EEE8DC",
               textDecoration: "none",
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
             }}>
-              MMA<span style={{ color: "var(--gold)" }}>Dads</span>
+              MMADADS.COM
             </Link>
-            <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-              <Link href="/blog" style={{
-                color: "var(--cream)",
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                textDecoration: "none",
-                opacity: 0.85,
-              }}>
-                Blog
-              </Link>
-              <Link href="/blog/womens-mma-stars-daughters-should-know" style={{
-                color: "var(--cream)",
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                textDecoration: "none",
-                opacity: 0.85,
-              }}>
-                Women's MMA
-              </Link>
-              <Link href="/blog/dads-guide-watching-ufc-family" style={{
-                color: "var(--cream)",
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                textDecoration: "none",
-                opacity: 0.85,
-              }}>
-                Family Night
-              </Link>
+            <div
+              className="nav-links"
+              style={{ display: "flex", gap: "2rem", alignItems: "center" }}
+            >
+              {[
+                { label: "FIGHT CARD", href: "/blog" },
+                { label: "BREAKDOWN", href: "/blog" },
+                { label: "BLOG", href: "/blog" },
+                { label: "PICKS", href: "/blog" },
+              ].map(({ label, href }) => (
+                <Link key={label} href={href} style={{
+                  fontFamily: "'Roboto Mono', monospace",
+                  fontWeight: 400,
+                  fontSize: "0.78rem",
+                  color: "#4A5568",
+                  textDecoration: "none",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                }}>
+                  {label}
+                </Link>
+              ))}
             </div>
           </nav>
         </header>
+
         <main>{children}</main>
+
+        {/* FOOTER */}
         <footer style={{
-          backgroundColor: "var(--blue)",
-          borderTop: "2px solid var(--gold)",
-          padding: "3rem 1.5rem",
-          marginTop: "4rem",
+          backgroundColor: "#080E18",
+          borderTop: "1px solid rgba(238,232,220,0.1)",
+          padding: "3rem 1.5rem 2rem",
         }}>
           <div style={{
-            maxWidth: "1100px",
+            maxWidth: "1200px",
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "2rem",
           }}>
-            <div>
-              <div style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "0.75rem" }}>
-                MMA<span style={{ color: "var(--gold)" }}>Dads</span>
-              </div>
-              <p style={{ fontSize: "0.9rem", opacity: 0.8, lineHeight: 1.7 }}>
-                Built by dads who love the sport. Women's MMA is criminally underrated -- we're fixing that.
-              </p>
+            <div style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              fontSize: "1.6rem",
+              color: "#EEE8DC",
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              marginBottom: "0.5rem",
+            }}>
+              MMADADS.COM
             </div>
-            <div>
-              <div style={{ fontWeight: 700, marginBottom: "0.75rem", color: "var(--gold)" }}>Quick Links</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                <Link href="/blog" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>All Posts</Link>
-                <Link href="/blog/womens-mma-stars-daughters-should-know" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>Women's MMA</Link>
-                <Link href="/blog/dads-guide-watching-ufc-family" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>Family Guide</Link>
-                <Link href="/blog/ufc-fight-night-party-guide-dads" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>Fight Night</Link>
-              </div>
+            <div style={{
+              fontFamily: "'Merriweather', serif",
+              fontSize: "0.9rem",
+              color: "#4A5568",
+              marginBottom: "2rem",
+            }}>
+              MMA coverage for dads who know the sport.
             </div>
-            <div>
-              <div style={{ fontWeight: 700, marginBottom: "0.75rem", color: "var(--gold)" }}>Affiliate Partners</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                <a href="https://ufcfightpass.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>UFC Fight Pass</a>
-                <a href="https://www.venum.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>Venum Gear</a>
-                <a href="https://www.draftkings.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cream)", opacity: 0.8, fontSize: "0.9rem" }}>DraftKings</a>
-              </div>
+
+            <div
+              className="footer-links-row"
+              style={{
+                display: "flex",
+                gap: "2rem",
+                flexWrap: "wrap",
+                marginBottom: "2rem",
+              }}
+            >
+              {[
+                { label: "BLOG", href: "/blog" },
+                { label: "FIGHT CARD", href: "/blog" },
+                { label: "PICKS", href: "/blog" },
+                { label: "BREAKDOWN", href: "/blog" },
+              ].map(({ label, href }) => (
+                <Link key={label} href={href} style={{
+                  fontFamily: "'Roboto Mono', monospace",
+                  fontSize: "0.75rem",
+                  color: "#4A5568",
+                  textDecoration: "none",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                }}>
+                  {label}
+                </Link>
+              ))}
             </div>
-          </div>
-          <div style={{
-            maxWidth: "1100px",
-            margin: "2rem auto 0",
-            paddingTop: "1.5rem",
-            borderTop: "1px solid rgba(250,250,248,0.15)",
-            fontSize: "0.8rem",
-            opacity: 0.6,
-            display: "flex",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-          }}>
-            <span>© {new Date().getFullYear()} MMADads.com. All rights reserved.</span>
-            <span>Affiliate links may earn us a commission at no cost to you.</span>
+
+            <div style={{
+              borderTop: "1px solid rgba(74,85,104,0.3)",
+              paddingTop: "1.5rem",
+              fontFamily: "'Roboto Mono', monospace",
+              fontSize: "0.72rem",
+              color: "#4A5568",
+            }}>
+              &copy; {new Date().getFullYear()} MMADADS.COM. All rights reserved. Affiliate links may earn a commission.
+            </div>
           </div>
         </footer>
       </body>

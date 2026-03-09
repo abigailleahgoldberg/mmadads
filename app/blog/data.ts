@@ -9,6 +9,143 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "jon-jones-stipe-miocic-fight-defined-an-era",
+    title: "Jon Jones vs Stipe Miocic: The Fight That Defined an Era",
+    excerpt:
+      "The greatest heavyweight of all time against the most decorated heavyweight champion. What happened in that cage, and what it meant for the division.",
+    category: "Fight Breakdown",
+    date: "March 8, 2026",
+    content: `
+The matchup felt inevitable from the moment Jon Jones won the heavyweight title at UFC 285. Stipe Miocic -- the man who held that belt longer than anyone in the division's history -- was still out there. Still ranked. Still, in the minds of the people who had watched every heavyweight title fight since 2012, unfinished business.
+
+When the fight finally happened, it delivered everything the weight class needed. Two eras in the same cage. The question settled in real time.
+
+**What Jones Brought**
+
+Jones at heavyweight was a different animal than Jones at 205. The mass was real. The wrestling, always elite, became physically overwhelming at the new weight. But what separated Jones from every other heavyweight was the same thing that separated him at light heavyweight: the ability to control pace and range in ways that make opponents guess wrong.
+
+He doesn't brawl. He doesn't need to. His clinch work ties up power fighters. His footwork prevents the exchanges that knockout artists need. Against Miocic -- who won three of his title fights by finding the body shot setup and timing the follow-up -- Jones's ability to change the geometry of the fight was the whole game.
+
+**What Miocic Brought**
+
+Stipe is underrated by casual fans in exactly the way that a grinding, technically precise fighter always gets underrated. He doesn't have the highlight reel that Jones has. But the resume is what it is: Francis Ngannou twice, Daniel Cormier three times, Alistair Overeem. The hardest heavyweights of his era, beaten methodically and decisively.
+
+He entered this fight as a significant underdog. He didn't fight like one.
+
+**What the Fight Told You**
+
+This isn't a column about spoilers -- watch it. But the broader point stands: the fight delivered on every dimension that a legacy-defining matchup needs to deliver on. Both men were at versions of themselves that were worth watching. The outcome, when it came, felt earned.
+
+For dads who want to show their kids what a championship-level heavyweight fight looks like -- the chess, the physicality, the moments where one good exchange can change everything -- this is the one.
+
+---
+
+*Full fight on [UFC Fight Pass](https://ufcfightpass.com).*
+`,
+  },
+  {
+    slug: "mma-judging-is-broken",
+    title: "Why MMA Judging Is Broken (And How to Fix It)",
+    excerpt:
+      "Unified Rules, the 10-must system, and endless controversy. A breakdown of what's wrong with how we score fights -- and what a better system looks like.",
+    category: "Analysis",
+    date: "March 6, 2026",
+    content: `
+If you've watched more than a dozen UFC cards, you've been robbed. Not personally -- but you've sat through a decision that made no sense, where the fighter who clearly won more rounds went home with a loss, where judges scored a takedown that went nowhere as a round-winning moment, where a fighter who was getting hit clean was credited for "activity."
+
+The judging system in MMA is broken. This is not a fringe take. It's the consensus of fighters, coaches, promoters, journalists, and fans who have been watching the sport closely. The question isn't whether it's broken. The question is how to fix it.
+
+**The 10-Must System Was Built for Boxing**
+
+The 10-must system -- where the winner of a round gets 10 points and the loser gets 9 (or fewer for knockdowns) -- was imported from boxing. In boxing, it works reasonably well because the scoring criteria are relatively clear: who landed the cleaner, harder shots, who controlled the ring, who was hurt.
+
+MMA added dimensions that boxing doesn't have. Takedowns. Submissions. Ground control. Damage from elbows and knees in the clinch. A fighter can be winning the stand-up exchanges and lose the round because their opponent put them on the mat for 90 seconds.
+
+The criteria -- effective striking, effective grappling, aggression, octagon control -- are ranked in that order of priority by the Unified Rules. In practice, judges apply them inconsistently, weight them differently, and frequently prioritize late-round action over earlier-round damage.
+
+**The Specific Problems**
+
+Takedowns without consequence. A fighter can take their opponent down, hold them against the fence for two minutes, land two ground punches, and get back up having accomplished almost nothing offensively. Under the current system, that control time frequently wins a round. It shouldn't.
+
+The 10-8 round is used too rarely. A round where one fighter thoroughly dominates -- hurting their opponent, landing significant strikes at a 3-to-1 ratio, nearly finishing the fight -- often gets scored 10-9. The 10-8 round exists for a reason. It accounts for dominant rounds that don't result in a stoppage. Judges need to use it more.
+
+Championship rounds. The final round of a close fight is often overweighted. A fighter who wins round five clearly but loses rounds one through four by small margins will frequently be given the decision. The "championship round" mythology creates incentives for conservation followed by a strong closing round rather than consistent performance.
+
+**What a Better System Looks Like**
+
+Several proposals have been floated by serious people. The most compelling involve either moving to a must system that better accounts for MMA-specific actions (introducing a point for attempts vs. control vs. damage from takedowns), or moving away from the round-based system entirely toward a total-fight assessment.
+
+The total-fight approach -- score the entire 15 or 25 minutes rather than three or five separate rounds -- would eliminate the "steal one round" strategy and force judges to evaluate overall performance. It has problems too, mainly that it removes the drama of close fights and makes judging even more subjective. But the current system has dramatic problems of its own.
+
+**What We Can Do Until It's Fixed**
+
+Watch cards with the judging criteria in mind. When you're assessing a round, ask yourself: who landed the cleaner shots? Who was hurt? Who controlled where the fight happened? Who made the other fighter do things they didn't want to do? That exercise will align you with what good judging should look like, and will make the controversies more understandable when they happen.
+
+The system will improve. It's improved before -- rules have been updated, criteria have been clarified, judges have been replaced after egregious decisions. Change in combat sports governance is slow. It happens.
+
+In the meantime, the group chat exists for exactly this reason.
+`,
+  },
+  {
+    slug: "10-mma-fighters-every-dad-should-know",
+    title: "The 10 MMA Fighters Every Dad Should Know",
+    excerpt:
+      "New to the sport or need a refresher? These are the fighters whose names you need to know -- their records, their styles, and why they matter.",
+    category: "Guide",
+    date: "March 4, 2026",
+    content: `
+You don't need to have watched every UFC card since 2009 to have intelligent conversations about the sport. You need to know the right names, understand what made them great, and have a framework for why they belong on any serious fan's list.
+
+Here are the 10 fighters every MMA dad should know. Not the full 50. Not the comprehensive list. The 10 that give you the foundation for everything else.
+
+**1. Khabib Nurmagomedov -- 29-0**
+
+The undefeated lightweight champion who retired at the top. The most dominant grappler in the sport's history at his weight class. If someone asks you who was the best ever at 155, the honest answer includes Khabib in the top two conversations.
+
+What made him special: the wrestling wasn't just that he could take you down. It was that once you were down, you couldn't get up. A decade of high-level Sambo and wrestling created pressure that the best lightweights in the world couldn't escape.
+
+**2. Amanda Nunes -- The GOAT**
+
+Covered extensively elsewhere on this site. Two simultaneous UFC titles. Finishes of Rousey, Cyborg, and Holm. The greatest MMA fighter of all time argument runs through her. Know her name.
+
+**3. Jon Jones -- The Controversial GOAT Candidate**
+
+Dominant at light heavyweight for over a decade. Moved to heavyweight and won the title there too. The most technically complete fighter in 205-pound history. His legacy is complicated by out-of-competition issues, but the performance record is extraordinary.
+
+**4. Georges St-Pierre -- The Complete Welterweight**
+
+Before the current era of finishers, GSP was the model of what a complete MMA fighter looked like. World-class wrestling. Elite striking. Championship-level conditioning. His ability to gameplan and execute made him one of the most reliable champions the sport has produced.
+
+**5. Anderson Silva -- The Spider**
+
+At his peak, Silva was the most dominant champion in the UFC at 185 pounds. A run of title defenses at middleweight that lasted years and included finishes of the best fighters in the division. The Forrest Griffin knockout is the single most memorable striking performance in UFC history.
+
+**6. Conor McGregor -- The Phenomenon**
+
+You need to know McGregor because your kids' generation knows McGregor. The southpaw power, the left hand, the crossover appeal that brought a new audience to the sport. His losses are as educational as his wins. Know both.
+
+**7. Stipe Miocic -- The Greatest Heavyweight Champion**
+
+Most title defenses in heavyweight history. Beat the most terrifying field of opponents the division has produced. A firefighter from Ohio who showed up, prepared, and performed at the highest level for years. His record at 265 pounds stands alone.
+
+**8. Valentina Shevchenko -- The Assassin**
+
+If you need to convince someone that women's MMA is elite-level athletic competition, put on a Shevchenko title defense. The precision, the movement, the finishing ability. One of the most technically complete fighters the sport has produced at any weight.
+
+**9. Dustin Poirier -- The Heart**
+
+Poirier's career is the story of someone who developed from a good fighter into a great one through pure determination. Two wins over McGregor. One of the most thrilling fights in lightweight history against Dan Hooker. A man who built something real -- the Good Fight Foundation -- with the platform the sport gave him.
+
+**10. Max Holloway -- The Volume Striker**
+
+The greatest featherweight of the modern era and the fighter with the best argument for most significant strikes landed in UFC history. Five-round performances that make other fighters look like they're going half speed. Watch any Holloway fight from his title run and you'll understand why the volume-striking approach, done at elite level with great defense, is as complete an offensive system as exists in the sport.
+
+---
+
+These 10 give you the foundation. The records, the styles, the moments. From here, the sport opens up naturally. One fight leads to another, one rivalry leads to a history, and before long you're the dad in the group chat sending breakdowns at midnight.
+`,
+  },
+  {
     slug: "dads-guide-watching-ufc-family",
     title: "How to Watch UFC With Your Family: A Dad's Complete Guide",
     excerpt:

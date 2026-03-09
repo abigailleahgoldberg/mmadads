@@ -1,337 +1,689 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { posts } from "./blog/data";
-import EmailSignup from "./components/EmailSignup";
 
-export const metadata: Metadata = {
-  title: "MMA Dads | Women's MMA Is Must-Watch TV",
-  description:
-    "For dads who love MMA and want to share the sport with their families. Women's MMA coverage, fight night guides, family training tips, and real talk about the best sport in the world.",
+const COLORS = {
+  dark: "#080E18",
+  navy: "#0F1C2E",
+  navyLight: "#141F30",
+  red: "#D42B2B",
+  slate: "#4A5568",
+  bone: "#EEE8DC",
+  gold: "#E8A020",
 };
 
-const featuredSlugs = [
-  "womens-mma-stars-daughters-should-know",
-  "dads-guide-watching-ufc-family",
-  "amanda-nunes-greatest-of-all-time-case",
+const FONT = {
+  display: "'Oswald', sans-serif",
+  body: "'Merriweather', Georgia, serif",
+  mono: "'Roboto Mono', monospace",
+};
+
+const latestPosts = posts.slice(0, 3);
+
+const champions = [
+  {
+    weightClass: "HEAVYWEIGHT",
+    name: "Jon Jones",
+    record: "27-1-0 (1 NC)",
+    style:
+      "The most decorated heavyweight in UFC history. Unmatched wrestling base and finishing instinct from every position.",
+  },
+  {
+    weightClass: "LIGHT HEAVYWEIGHT",
+    name: "Alex Pereira",
+    record: "12-2",
+    style:
+      "Four-weight kickboxing champion turned UFC destroyer. Knockout power in both hands. Finishes anyone on his best night.",
+  },
+  {
+    weightClass: "MIDDLEWEIGHT",
+    name: "Dricus du Plessis",
+    record: "22-2",
+    style:
+      "South African pressure and pure grit. Wrestling-based control with a finishing instinct that makes everyone uncomfortable.",
+  },
+  {
+    weightClass: "WELTERWEIGHT",
+    name: "Belal Muhammad",
+    record: "23-3",
+    style:
+      "The marathon man. Relentless grappling pressure, elite conditioning, and a pace that breaks opponents across 25 minutes.",
+  },
 ];
 
-const featuredPosts = featuredSlugs
-  .map((slug) => posts.find((p) => p.slug === slug))
-  .filter(Boolean);
+const chatMessages = [
+  "bro did you see that finish",
+  "judges robbed him again. two rounds clear",
+  "4am and i'm still watching the post-fight presser",
+];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* ============================================================
+          SECTION 1: HERO
+      ============================================================ */}
       <section style={{
-        background: `linear-gradient(135deg, var(--dark) 0%, var(--blue) 60%, #0f1f3d 100%)`,
-        borderBottom: "3px solid var(--gold)",
-        padding: "5rem 1.5rem 4rem",
-        textAlign: "center",
+        backgroundColor: COLORS.dark,
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
         position: "relative",
         overflow: "hidden",
       }}>
+        {/* Red stripe -- fight card energy */}
         <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "repeating-linear-gradient(45deg, rgba(217,119,6,0.03) 0px, rgba(217,119,6,0.03) 1px, transparent 1px, transparent 40px)",
-          pointerEvents: "none",
+          height: "6px",
+          backgroundColor: COLORS.red,
+          width: "100%",
+          flexShrink: 0,
         }} />
-        <div style={{ maxWidth: "820px", margin: "0 auto", position: "relative" }}>
-          <div style={{
-            display: "inline-block",
-            backgroundColor: "var(--red)",
-            color: "var(--cream)",
-            fontSize: "0.75rem",
-            fontWeight: 800,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            padding: "0.35rem 1rem",
-            borderRadius: "2px",
-            marginBottom: "1.5rem",
-          }}>
-            For Dads Who Get It
+
+        {/* Hero content */}
+        <div
+          className="hero-content-wrap"
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "5rem 1.5rem 4rem",
+            width: "100%",
+            gap: "3rem",
+          }}
+        >
+          {/* LEFT: 60% */}
+          <div
+            className="hero-left-panel"
+            style={{ flex: "0 0 58%" }}
+          >
+            {/* Label */}
+            <div style={{
+              fontFamily: FONT.mono,
+              fontSize: "0.72rem",
+              color: COLORS.red,
+              textTransform: "uppercase",
+              letterSpacing: "0.2em",
+              marginBottom: "1.75rem",
+            }}>
+              POST-BEDTIME MMA COVERAGE
+            </div>
+
+            {/* Headline */}
+            <div
+              className="hero-headline"
+              style={{
+                fontFamily: FONT.display,
+                fontWeight: 700,
+                fontSize: "clamp(64px, 10vw, 120px)",
+                lineHeight: 0.92,
+                marginBottom: "2rem",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              <div style={{ color: COLORS.bone }}>THE CARD</div>
+              <div style={{ color: COLORS.slate }}>STARTS AT</div>
+              <div style={{ color: COLORS.red }}>10PM.</div>
+            </div>
+
+            {/* Body */}
+            <p style={{
+              fontFamily: FONT.body,
+              fontSize: "1.05rem",
+              color: COLORS.slate,
+              lineHeight: 1.75,
+              maxWidth: "480px",
+              marginBottom: "2.5rem",
+            }}>
+              Kids are in bed. Snacks are ready. The group chat is going. This is for the dads who know every record and watch every prelim.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className="hero-cta-row"
+              style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
+            >
+              <Link href="/blog" style={{
+                fontFamily: FONT.display,
+                fontWeight: 700,
+                fontSize: "0.9rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                backgroundColor: COLORS.red,
+                color: COLORS.bone,
+                padding: "0.9rem 2rem",
+                textDecoration: "none",
+                display: "inline-block",
+              }}>
+                TONIGHT'S CARD
+              </Link>
+              <Link href="/blog" style={{
+                fontFamily: FONT.display,
+                fontWeight: 700,
+                fontSize: "0.9rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                backgroundColor: "transparent",
+                color: COLORS.bone,
+                border: `2px solid ${COLORS.bone}`,
+                padding: "0.9rem 2rem",
+                textDecoration: "none",
+                display: "inline-block",
+              }}>
+                THE BLOG
+              </Link>
+            </div>
           </div>
-          <h1 style={{
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            fontWeight: 900,
-            lineHeight: 1.1,
-            marginBottom: "1.5rem",
-            color: "var(--cream)",
+
+          {/* RIGHT: 40% -- Fight Card Panel */}
+          <div
+            className="hero-right-panel"
+            style={{
+              flex: "0 0 38%",
+              backgroundColor: COLORS.navyLight,
+              padding: "2rem",
+              alignSelf: "stretch",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            {/* "TONIGHT" label */}
+            <div style={{
+              fontFamily: FONT.display,
+              fontWeight: 700,
+              fontSize: "0.8rem",
+              color: COLORS.red,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              marginBottom: "1.5rem",
+            }}>
+              TONIGHT
+            </div>
+
+            {/* Fight card entries */}
+            {[
+              { event: "MAIN EVENT", weightClass: "HEAVYWEIGHT" },
+              { event: "CO-MAIN EVENT", weightClass: "LIGHT HEAVYWEIGHT" },
+              { event: "PRELIMS", weightClass: "MULTIPLE BOUTS" },
+            ].map(({ event, weightClass }, i) => (
+              <div key={event}>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  paddingTop: i === 0 ? 0 : "1.25rem",
+                  paddingBottom: "1.25rem",
+                }}>
+                  {/* Left: event type + weight class */}
+                  <div>
+                    <div style={{
+                      fontFamily: FONT.mono,
+                      fontSize: "0.65rem",
+                      color: COLORS.slate,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      marginBottom: "0.3rem",
+                    }}>
+                      {weightClass}
+                    </div>
+                    <div style={{
+                      fontFamily: FONT.display,
+                      fontWeight: 500,
+                      fontSize: "0.8rem",
+                      color: COLORS.slate,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                    }}>
+                      {event}
+                    </div>
+                  </div>
+                  {/* Right: fighters */}
+                  <div style={{
+                    fontFamily: FONT.display,
+                    fontWeight: 700,
+                    fontSize: "1rem",
+                    color: COLORS.bone,
+                    textAlign: "right",
+                    letterSpacing: "0.02em",
+                  }}>
+                    TBD vs TBD
+                  </div>
+                </div>
+                {/* Separator -- not after last item */}
+                {i < 2 && (
+                  <div style={{
+                    height: "1px",
+                    backgroundColor: `${COLORS.bone}22`,
+                    width: "100%",
+                  }} />
+                )}
+              </div>
+            ))}
+
+            {/* Full card link */}
+            <div style={{ marginTop: "1.75rem" }}>
+              <Link href="/blog" style={{
+                fontFamily: FONT.mono,
+                fontSize: "0.72rem",
+                color: COLORS.bone,
+                textDecoration: "none",
+                letterSpacing: "0.06em",
+                opacity: 0.7,
+              }}>
+                Full card breakdown --&gt;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          SECTION 2: THE DAD TEST
+      ============================================================ */}
+      <section style={{
+        backgroundColor: COLORS.bone,
+        padding: "6rem 1.5rem",
+      }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          {/* Headline */}
+          <div style={{
+            fontFamily: FONT.display,
+            fontWeight: 700,
+            fontSize: "clamp(36px, 6vw, 72px)",
+            color: COLORS.dark,
+            lineHeight: 0.95,
+            letterSpacing: "-0.01em",
+            marginBottom: "3rem",
+            textTransform: "uppercase",
           }}>
-            MMA Dads Know:{" "}
-            <span style={{ color: "var(--gold)" }}>
-              Women's MMA Is Must-Watch TV
-            </span>
-          </h1>
-          <p style={{
-            fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
-            opacity: 0.85,
-            lineHeight: 1.7,
-            marginBottom: "2.5rem",
-            maxWidth: "660px",
-            margin: "0 auto 2.5rem",
+            DO YOU PASS<br />THE DAD TEST?
+          </div>
+
+          {/* Checklist */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginBottom: "3rem" }}>
+            {[
+              "You know Khabib's record off the top of your head",
+              "You've explained the difference between wrestling and jiu-jitsu to your kid",
+              "You have an opinion about judging criteria",
+              "You've woken up at 3am for a fight card on another continent",
+              "Your group chat has a dedicated MMA thread",
+            ].map((item) => (
+              <div key={item} style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "1rem",
+              }}>
+                {/* Square checkbox */}
+                <div style={{
+                  width: "22px",
+                  height: "22px",
+                  minWidth: "22px",
+                  backgroundColor: COLORS.red,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginTop: "2px",
+                }}>
+                  <span style={{
+                    color: COLORS.bone,
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    lineHeight: 1,
+                    fontFamily: FONT.mono,
+                  }}>
+                    X
+                  </span>
+                </div>
+                <span style={{
+                  fontFamily: FONT.body,
+                  fontSize: "1rem",
+                  color: COLORS.dark,
+                  lineHeight: 1.5,
+                }}>
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing */}
+          <div style={{
+            borderTop: `3px solid ${COLORS.dark}`,
+            paddingTop: "2rem",
           }}>
-            Dad-approved coverage of the greatest sport on earth. Fight night guides, family-friendly MMA, women's division deep dives, and real talk from dads who can't stop watching.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/blog" style={{
-              backgroundColor: "var(--gold)",
-              color: "var(--dark)",
-              padding: "0.85rem 2rem",
-              borderRadius: "4px",
-              fontWeight: 800,
+            <div style={{
+              fontFamily: FONT.display,
+              fontWeight: 700,
+              fontSize: "clamp(28px, 4vw, 48px)",
+              color: COLORS.dark,
+              textTransform: "uppercase",
+              letterSpacing: "0.02em",
+              marginBottom: "0.75rem",
+            }}>
+              YOU BELONG HERE.
+            </div>
+            <p style={{
+              fontFamily: FONT.body,
               fontSize: "1rem",
-              textDecoration: "none",
+              color: COLORS.slate,
+              lineHeight: 1.7,
+              maxWidth: "500px",
+            }}>
+              mmadads.com covers MMA the way you watch it. Seriously.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          SECTION 3: FIGHTER STATS -- CURRENT CHAMPIONS
+      ============================================================ */}
+      <section style={{
+        backgroundColor: COLORS.dark,
+        padding: "6rem 1.5rem",
+        borderTop: `1px solid ${COLORS.navy}`,
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          {/* Header */}
+          <div style={{ marginBottom: "3rem" }}>
+            <div style={{
+              fontFamily: FONT.mono,
+              fontSize: "0.7rem",
+              color: COLORS.red,
+              textTransform: "uppercase",
+              letterSpacing: "0.2em",
+              marginBottom: "0.75rem",
+            }}>
+              AS OF EARLY 2026
+            </div>
+            <div style={{
+              fontFamily: FONT.display,
+              fontWeight: 700,
+              fontSize: "clamp(28px, 4vw, 48px)",
+              color: COLORS.bone,
+              textTransform: "uppercase",
               letterSpacing: "0.02em",
             }}>
-              Read the Blog
-            </Link>
-            <Link href="/blog/womens-mma-stars-daughters-should-know" style={{
-              backgroundColor: "transparent",
-              color: "var(--cream)",
-              padding: "0.85rem 2rem",
-              borderRadius: "4px",
-              fontWeight: 700,
-              fontSize: "1rem",
-              textDecoration: "none",
-              border: "2px solid rgba(250,250,248,0.35)",
-            }}>
-              Women's MMA Fighters
-            </Link>
+              CURRENT CHAMPIONS
+            </div>
+          </div>
+
+          {/* Grid */}
+          <div
+            className="champion-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "1.5rem",
+            }}
+          >
+            {champions.map((c) => (
+              <div key={c.weightClass} style={{
+                backgroundColor: COLORS.navy,
+                borderLeft: `4px solid ${COLORS.gold}`,
+                padding: "1.75rem 1.5rem",
+              }}>
+                {/* Weight class */}
+                <div style={{
+                  fontFamily: FONT.mono,
+                  fontSize: "0.62rem",
+                  color: COLORS.slate,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  marginBottom: "0.75rem",
+                }}>
+                  {c.weightClass}
+                </div>
+                {/* Name */}
+                <div style={{
+                  fontFamily: FONT.display,
+                  fontWeight: 700,
+                  fontSize: "1.4rem",
+                  color: COLORS.bone,
+                  lineHeight: 1.1,
+                  marginBottom: "0.5rem",
+                  textTransform: "uppercase",
+                }}>
+                  {c.name}
+                </div>
+                {/* Record */}
+                <div style={{
+                  fontFamily: FONT.mono,
+                  fontSize: "0.8rem",
+                  color: COLORS.red,
+                  marginBottom: "0.75rem",
+                  letterSpacing: "0.04em",
+                }}>
+                  {c.record}
+                </div>
+                {/* Style note */}
+                <div style={{
+                  fontFamily: FONT.body,
+                  fontSize: "0.82rem",
+                  color: COLORS.slate,
+                  lineHeight: 1.65,
+                }}>
+                  {c.style}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Women's MMA Banner */}
+      {/* ============================================================
+          SECTION 4: BLOG PREVIEW
+      ============================================================ */}
       <section style={{
-        backgroundColor: "var(--blue)",
-        padding: "2rem 1.5rem",
-        borderBottom: "1px solid rgba(217,119,6,0.3)",
+        backgroundColor: COLORS.navy,
+        padding: "6rem 1.5rem",
       }}>
-        <div style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          gap: "1.5rem",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          {/* Header */}
           <div style={{
-            width: "3px",
-            height: "40px",
-            backgroundColor: "var(--gold)",
-            flexShrink: 0,
-          }} />
-          <p style={{
-            fontSize: "1.1rem",
-            fontWeight: 600,
-            opacity: 0.9,
-            maxWidth: "700px",
-            textAlign: "center",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            marginBottom: "3rem",
+            flexWrap: "wrap",
+            gap: "1rem",
           }}>
-            Women's MMA is the most underrated product in all of combat sports. Once you actually watch it, you'll never go back.
-          </p>
-          <div style={{
-            width: "3px",
-            height: "40px",
-            backgroundColor: "var(--gold)",
-            flexShrink: 0,
-          }} />
-        </div>
-      </section>
+            <div>
+              <div style={{
+                fontFamily: FONT.mono,
+                fontSize: "0.7rem",
+                color: COLORS.red,
+                textTransform: "uppercase",
+                letterSpacing: "0.2em",
+                marginBottom: "0.5rem",
+              }}>
+                LATEST FROM THE SITE
+              </div>
+              <div style={{
+                fontFamily: FONT.display,
+                fontWeight: 700,
+                fontSize: "clamp(28px, 4vw, 44px)",
+                color: COLORS.bone,
+                textTransform: "uppercase",
+                letterSpacing: "0.02em",
+              }}>
+                THE BREAKDOWN
+              </div>
+            </div>
+            <Link href="/blog" style={{
+              fontFamily: FONT.mono,
+              fontSize: "0.75rem",
+              color: COLORS.bone,
+              textDecoration: "none",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              opacity: 0.6,
+              paddingBottom: "0.25rem",
+              borderBottom: `1px solid ${COLORS.slate}`,
+            }}>
+              ALL POSTS --&gt;
+            </Link>
+          </div>
 
-      {/* Featured Posts */}
-      <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "4rem 1.5rem" }}>
-        <div style={{ marginBottom: "2.5rem" }}>
-          <h2 style={{
-            fontSize: "1.75rem",
-            fontWeight: 800,
-            marginBottom: "0.5rem",
-          }}>
-            Start Here
-          </h2>
-          <p style={{ opacity: 0.65, fontSize: "1rem" }}>
-            The posts every MMA dad should read first.
-          </p>
-        </div>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "1.5rem",
-        }}>
-          {featuredPosts.map((post) => {
-            if (!post) return null;
-            return (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                style={{ textDecoration: "none" }}
-              >
+          {/* Post cards */}
+          <div
+            className="blog-preview-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1.5rem",
+            }}
+          >
+            {latestPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
                 <article style={{
-                  backgroundColor: "var(--blue)",
-                  border: "1px solid rgba(217,119,6,0.2)",
-                  borderRadius: "6px",
+                  backgroundColor: COLORS.navyLight,
+                  borderTop: `3px solid ${COLORS.red}`,
                   padding: "1.75rem",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  transition: "border-color 0.2s, transform 0.2s",
                   cursor: "pointer",
                 }}>
+                  {/* Category */}
                   <div style={{
-                    display: "inline-block",
-                    backgroundColor: "rgba(217,119,6,0.15)",
-                    color: "var(--gold)",
-                    fontSize: "0.7rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
+                    fontFamily: FONT.mono,
+                    fontSize: "0.62rem",
+                    color: COLORS.slate,
                     textTransform: "uppercase",
-                    padding: "0.25rem 0.65rem",
-                    borderRadius: "2px",
-                    marginBottom: "1rem",
-                    width: "fit-content",
+                    letterSpacing: "0.12em",
+                    marginBottom: "0.85rem",
                   }}>
                     {post.category}
                   </div>
-                  <h3 style={{
+                  {/* Title */}
+                  <div style={{
+                    fontFamily: FONT.display,
+                    fontWeight: 700,
                     fontSize: "1.15rem",
-                    fontWeight: 800,
-                    color: "var(--cream)",
-                    marginBottom: "0.75rem",
-                    lineHeight: 1.3,
+                    color: COLORS.bone,
+                    lineHeight: 1.25,
+                    marginBottom: "0.85rem",
+                    textTransform: "uppercase",
                   }}>
                     {post.title}
-                  </h3>
+                  </div>
+                  {/* Excerpt */}
                   <p style={{
-                    fontSize: "0.9rem",
-                    opacity: 0.75,
-                    lineHeight: 1.6,
+                    fontFamily: FONT.body,
+                    fontSize: "0.85rem",
+                    color: COLORS.slate,
+                    lineHeight: 1.7,
                     flexGrow: 1,
                     marginBottom: "1.25rem",
                   }}>
                     {post.excerpt}
                   </p>
+                  {/* Date */}
                   <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    fontSize: "0.8rem",
-                    opacity: 0.6,
-                  }}>
-                    <span>{post.date}</span>
-                    <span style={{ color: "var(--gold)", fontWeight: 600 }}>Read more →</span>
-                  </div>
-                </article>
-              </Link>
-            );
-          })}
-        </div>
-        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <Link href="/blog" style={{
-            color: "var(--gold)",
-            fontWeight: 700,
-            fontSize: "1rem",
-            textDecoration: "none",
-            border: "2px solid var(--gold)",
-            padding: "0.75rem 2rem",
-            borderRadius: "4px",
-            display: "inline-block",
-          }}>
-            View All Posts →
-          </Link>
-        </div>
-      </section>
-
-      {/* Stats / Values Section */}
-      <section style={{
-        backgroundColor: "var(--blue)",
-        padding: "4rem 1.5rem",
-        borderTop: "1px solid rgba(217,119,6,0.2)",
-        borderBottom: "1px solid rgba(217,119,6,0.2)",
-      }}>
-        <div style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "2.5rem",
-          textAlign: "center",
-        }}>
-          {[
-            { num: "15", label: "In-depth posts" },
-            { num: "Women's", label: "MMA focus" },
-            { num: "Zero", label: "Fluff content" },
-            { num: "Dad", label: "Approved" },
-          ].map(({ num, label }) => (
-            <div key={label}>
-              <div style={{
-                fontSize: "2.5rem",
-                fontWeight: 900,
-                color: "var(--gold)",
-                marginBottom: "0.35rem",
-              }}>
-                {num}
-              </div>
-              <div style={{ fontSize: "0.95rem", opacity: 0.7, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                {label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Email Signup */}
-      <EmailSignup />
-
-      {/* Recent Posts Grid */}
-      <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 1.5rem 4rem" }}>
-        <h2 style={{ fontSize: "1.5rem", fontWeight: 800, marginBottom: "2rem" }}>
-          More From the Blog
-        </h2>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-          gap: "1.25rem",
-        }}>
-          {posts
-            .filter((p) => !featuredSlugs.includes(p.slug))
-            .slice(0, 6)
-            .map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                style={{ textDecoration: "none" }}
-              >
-                <article style={{
-                  borderLeft: "3px solid var(--gold)",
-                  paddingLeft: "1rem",
-                  paddingBottom: "0.5rem",
-                }}>
-                  <div style={{
-                    fontSize: "0.7rem",
-                    color: "var(--gold)",
-                    fontWeight: 700,
+                    fontFamily: FONT.mono,
+                    fontSize: "0.68rem",
+                    color: COLORS.slate,
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
-                    marginBottom: "0.4rem",
+                    opacity: 0.7,
                   }}>
-                    {post.category}
+                    {post.date}
                   </div>
-                  <h3 style={{
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    color: "var(--cream)",
-                    lineHeight: 1.35,
-                    marginBottom: "0.4rem",
-                  }}>
-                    {post.title}
-                  </h3>
-                  <span style={{ fontSize: "0.75rem", opacity: 0.5 }}>{post.date}</span>
                 </article>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          SECTION 5: THE GROUP CHAT
+      ============================================================ */}
+      <section style={{
+        backgroundColor: COLORS.navy,
+        borderTop: `1px solid ${COLORS.dark}`,
+        padding: "6rem 1.5rem",
+      }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          {/* Headline */}
+          <div style={{
+            fontFamily: FONT.display,
+            fontWeight: 700,
+            fontSize: "clamp(28px, 5vw, 56px)",
+            color: COLORS.bone,
+            textTransform: "uppercase",
+            letterSpacing: "0.01em",
+            lineHeight: 1.05,
+            marginBottom: "3rem",
+            textAlign: "center",
+          }}>
+            THE GROUP CHAT<br />NEVER SLEEPS
+          </div>
+
+          {/* Chat bubbles */}
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            marginBottom: "3rem",
+          }}>
+            {chatMessages.map((msg, i) => (
+              <div key={i} style={{
+                display: "flex",
+                justifyContent: i % 2 === 0 ? "flex-start" : "flex-end",
+              }}>
+                <div style={{
+                  backgroundColor: i % 2 === 0 ? "#1C2C45" : "#233352",
+                  borderRadius: i % 2 === 0
+                    ? "0 16px 16px 16px"
+                    : "16px 0 16px 16px",
+                  padding: "0.85rem 1.2rem",
+                  maxWidth: "70%",
+                }}>
+                  <span style={{
+                    fontFamily: FONT.mono,
+                    fontSize: "0.82rem",
+                    color: COLORS.bone,
+                    lineHeight: 1.5,
+                    opacity: 0.9,
+                  }}>
+                    {msg}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Body + CTA */}
+          <div style={{ textAlign: "center" }}>
+            <p style={{
+              fontFamily: FONT.body,
+              fontSize: "0.95rem",
+              color: COLORS.slate,
+              lineHeight: 1.75,
+              marginBottom: "2rem",
+            }}>
+              This site is for those conversations. MMA coverage from dads who actually watch.
+            </p>
+            <Link href="/blog" style={{
+              fontFamily: FONT.display,
+              fontWeight: 700,
+              fontSize: "0.9rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              backgroundColor: COLORS.red,
+              color: COLORS.bone,
+              padding: "0.9rem 2rem",
+              textDecoration: "none",
+              display: "inline-block",
+            }}>
+              READ THE BLOG
+            </Link>
+          </div>
         </div>
       </section>
     </>
