@@ -1,0 +1,36 @@
+# MMADads.com
+
+## About
+MMADads.com is a blog and resource site for dads who love mixed martial arts, with a special focus on women's MMA. The site covers fight night guides, family-friendly MMA content, women's division analysis, training guides for families, fighter profiles, and gear recommendations.
+
+## Mission
+To celebrate MMA -- especially the criminally underrated women's divisions -- and share the sport with families. Women's MMA is must-watch television and more dads should know it.
+
+## Content
+- Blog posts covering women's MMA, fight night setup, family training, UFC analysis, and fighter profiles
+- 15 long-form articles (900+ words each) written from the perspective of an MMA dad
+- Affiliate partnerships with UFC Fight Pass, Venum, and DraftKings (tag: mmadads-20)
+
+## Key Topics
+- Women's MMA (Amanda Nunes, Valentina Shevchenko, Zhang Weili, Rose Namajunas, Julianna Pena, and more)
+- Watching UFC with family: age-appropriate guides, how to talk about the sport
+- Home gym setup for MMA families
+- Getting kids into martial arts
+- Fight night party hosting
+- MMA betting basics
+- UFC fighters who are fathers
+- Best fights to watch with kids
+
+## Site Structure
+- Homepage: Hero, featured posts, email signup
+- /blog: Full post index with all 15 articles
+- /blog/[slug]: Individual post pages with affiliate blocks and related posts
+- /sitemap.xml: Full sitemap
+- /robots.txt: Crawler instructions
+
+## Contact
+Site: https://mmadads.com
+GitHub: https://github.com/abigailleahgoldberg/mmadads
+
+## Affiliate Disclosure
+This site uses affiliate links. When readers click and make a purchase, we may earn a commission at no cost to them. We only recommend products we use and trust.
