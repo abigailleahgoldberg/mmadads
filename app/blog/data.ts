@@ -1351,4 +1351,309 @@ Small rituals make big traditions. Decide on yours early and commit to them. Fiv
 *For streaming the card itself, [UFC Fight Pass](https://ufcfightpass.com) is the most complete option. If you're betting on the card, [DraftKings](https://www.draftkings.com) is where we'd send you. For fight gear and any training that comes from the inspiration, [Venum](https://www.venum.com) is the brand we trust.*
 `,
   },
+
+  {
+    slug: "complete-history-ufc-heavyweight-division",
+    title: "The Complete History of the UFC Heavyweight Division",
+    excerpt: "From Mark Coleman's ground-and-pound to Jon Jones's reign. Every era, every champion, every moment that mattered.",
+    category: "History",
+    date: "March 14, 2026",
+    content: `
+The UFC heavyweight division is where legends are made and myths are shattered. It's the division that casual fans watch because knockouts happen. It's the division diehards study because the chess matches between 250-pound athletes are unlike anything else in sports.
+
+**The Dark Ages: Mark Coleman to Tim Sylvia (1997-2007)**
+
+Mark Coleman was the first UFC heavyweight champion under the unified rules, and he set the template that would define the division for years: wrestle them down, hit them until it stops. Coleman's ground-and-pound was revolutionary at the time, and brutal in its simplicity.
+
+Randy Couture brought legitimacy. A former Army sergeant with a wrestling pedigree and the kind of toughness that made you believe the sport was real. Couture won the heavyweight title three separate times across a decade, a feat that seems impossible until you remember he was doing it into his mid-40s.
+
+Tim Sylvia held the belt and nobody was particularly excited about it. He was effective, tall, and fought at a pace that tested your commitment to the sport. But Sylvia's reign is important historically because it represented what the heavyweight division looked like before athletes figured out the game.
+
+**The Golden Era: Brock Lesnar to Cain Velasquez (2008-2014)**
+
+Brock Lesnar changed everything. A former WWE champion and NCAA Division I wrestler who walked into the UFC at 280 pounds of legitimate athletic ability. Lesnar brought mainstream attention the heavyweight division had never seen. UFC 100 -- Lesnar vs. Frank Mir 2 -- was the biggest event in company history at the time.
+
+Then came Cain Velasquez. If Lesnar was the spectacle, Velasquez was the answer to the question: what happens when a heavyweight can actually fight for 25 minutes? Cain's cardio was supernatural. His pressure was relentless. He beat Lesnar, lost to Junior dos Santos, then annihilated JDS twice in rematches that weren't competitive.
+
+Junior dos Santos deserves his chapter too. The sweetest boxing in heavyweight history. That right hand was a thing of beauty -- clean, technical, delivered with timing that made heavyweight striking look like art instead of a bar fight.
+
+**The Stipe Era (2016-2021)**
+
+Stipe Miocic is the most accomplished UFC heavyweight of all time by the numbers. Three consecutive title defenses -- a record at the time. Wins over Werdum, Overeem, Ngannou, and Dos Santos. The firefighter from Cleveland who fought like he had a shift to get back to.
+
+The Daniel Cormier rivalry gave us three of the best heavyweight fights ever. Miocic lost the belt, adjusted, and took it back -- the kind of narrative arc that makes sports worth watching.
+
+**The Francis Ngannou Interlude (2022-2023)**
+
+Ngannou's knockout power was genuinely scary. The kind of power that made every fight feel like it could end with one punch. He beat Miocic for the belt, defended it against Ciryl Gane with wrestling nobody knew he had, then left the UFC in a contract dispute that shook the promotion.
+
+**The Jon Jones Era (2023-Present)**
+
+Jon Jones moved to heavyweight and immediately looked like the best fighter in the division. The wrestling, the creativity, the ability to control every phase of the fight -- it all translated. Jones vs. Miocic was the passing of the torch. Jones vs. Aspinall is the fight everyone wants next.
+
+Tom Aspinall is the future. Fast hands, legitimate knockout power, and a finishing rate that makes the heavyweight division feel dangerous again. Whether Jones fights him or retires, Aspinall is the next era.
+
+**What Makes Heavyweights Different**
+
+Every other division rewards cardio and volume. Heavyweights reward power and timing. One punch changes everything. One takedown can drain a gas tank that was already running on fumes. The margin for error is zero, and that's what makes it the most exciting -- and most frustrating -- division in the sport.
+
+---
+
+*The heavyweight division is where dads who grew up watching boxing learned to love MMA. It's raw, it's real, and it never gets old.*
+`,
+  },
+  {
+    slug: "how-to-explain-ground-fighting-to-your-kids",
+    title: "How to Explain Ground Fighting to Your Kids",
+    excerpt: "When your kid asks why they're hugging on the ground, here's how to explain jiu-jitsu in a way that actually makes sense.",
+    category: "Family Guide",
+    date: "March 14, 2026",
+    content: `
+You're watching the UFC with your kids. The fight goes to the ground. One fighter is on top, the other is on the bottom with their legs wrapped around the guy on top. Your kid looks at you and asks: "Why are they hugging?"
+
+Fair question. Here's how to explain it.
+
+**Start With the Concept of Control**
+
+Ground fighting is about control. The person on top usually has the advantage because gravity is helping them. They can use their weight to pin the other person down. Think of it like a wrestling match at school -- the goal is to control the other person's body.
+
+The person on bottom isn't just laying there. They're using their legs and hips to create space and control distance. Those legs wrapped around the other person's waist? That's called "guard" and it's actually a really strong defensive position.
+
+**Explain Submissions Like Puzzles**
+
+The coolest part of ground fighting for kids is the puzzle aspect. A submission is like a physical puzzle -- you're trying to isolate one body part (an arm, a neck) and put pressure on it until the other person taps out.
+
+An armbar is when you isolate someone's arm and hyperextend the elbow. A rear naked choke is when you wrap your arms around someone's neck and squeeze the sides (not the throat). A triangle choke uses your legs to do the same thing from the bottom position.
+
+The key concept: these techniques work because of leverage, not strength. A smaller person who knows the technique can submit a bigger person who doesn't. That's why jiu-jitsu is so popular for self-defense -- size matters less than knowledge.
+
+**The Tap Is the Safety Valve**
+
+This is the most important thing for kids to understand: the tap means stop. When someone taps, the other person lets go immediately. That's the rule. That's what makes it a sport instead of a fight.
+
+The tap is like saying "you got me." It's not quitting -- it's recognizing that the other person solved the puzzle. The best fighters in the world tap all the time in training. It's how you learn.
+
+**Positions Have Names**
+
+If your kid is interested, teach them the basic positions:
+- **Mount**: sitting on top of someone's chest. Very dominant.
+- **Side control**: lying across someone's body from the side. Heavy and controlling.
+- **Guard**: bottom position with legs wrapped around the top person. Defensive but active.
+- **Back mount**: behind someone with both hooks (legs) in. The most dominant position in MMA.
+- **Half guard**: bottom with one of the top person's legs trapped. A transition position.
+
+Once kids know the position names, they can follow what's happening. "He just took his back" makes sense. "She's working from guard" becomes readable.
+
+**Why It Matters**
+
+Ground fighting is where most real-world altercations end up. Understanding how to control someone on the ground -- or how to get back to your feet -- is the most practical self-defense skill there is. Every parent wants their kid to be safe. Jiu-jitsu teaches that without teaching aggression.
+
+Plus, once your kid understands the ground game, you've got a training partner for life. And that's worth more than any belt.
+
+---
+
+*If your kids want to start training, local Brazilian Jiu-Jitsu schools almost always offer kids' classes. Most gyms will let you watch a class before committing.*
+`,
+  },
+  {
+    slug: "ufc-fight-night-vs-ppv-dads-spending-guide",
+    title: "UFC Fight Night vs PPV: A Dad's Spending Guide",
+    excerpt: "Not every card is worth $79.99. Here's how to know which ones to buy and which ones to stream.",
+    category: "Dad Guide",
+    date: "March 14, 2026",
+    content: `
+The UFC runs roughly 40+ events per year. Some cost $79.99 on pay-per-view. Some are free with your ESPN+ subscription. Knowing the difference saves you hundreds of dollars a year and makes you a smarter fan.
+
+**The Breakdown**
+
+There are three types of UFC events:
+
+**PPV (Pay-Per-View)**: The big numbered events -- UFC 300, UFC 305, etc. These are $79.99 on top of your ESPN+ subscription ($10.99/month). These always have title fights and the biggest names. Usually 5 fights on the main card, 4 on the prelims, 4 on the early prelims.
+
+**Fight Night**: Free with ESPN+. These are the Saturday night events that don't have a number. Usually headlined by ranked fighters or rising contenders. The main card airs on ESPN or ESPN+, prelims on ESPN+.
+
+**APEX Events**: Held at the UFC's own facility in Las Vegas. Smaller cage, no crowd (or limited crowd). Usually Fight Night-level cards. Free with ESPN+.
+
+**Which PPVs Are Worth Buying**
+
+Not all PPVs are created equal. Here's the framework:
+
+*Always buy* when:
+- There's a title fight you actually care about
+- Two top-5 fighters in the main event
+- The co-main is also stacked (two title fights on one card = always buy)
+- It's a milestone event (UFC 300 was unmissable)
+
+*Watch at a bar* when:
+- The main event is good but the undercard is thin
+- It's a title fight in a division you don't follow closely
+- You want the social experience without the $80 price tag
+
+*Skip* when:
+- The main event is a mismatch
+- You don't recognize anyone on the card besides the headliner
+- It's the third PPV in a month and your budget says no
+
+**The ESPN+ Math**
+
+ESPN+ costs $10.99/month or $109.99/year. At the annual rate, you're paying about $9.17/month. For that, you get every Fight Night card, every prelim, the entire UFC Fight Library, and access to buy PPVs.
+
+If you watch 2+ Fight Night cards per month, ESPN+ pays for itself. If you only watch PPVs, the annual subscription plus 4-5 PPVs per year runs you about $510. That's $42.50 per month for essentially unlimited MMA content.
+
+**The Bar Strategy**
+
+Find a sports bar that shows UFC events. Most Buffalo Wild Wings locations and many local sports bars carry every PPV. The cost: whatever you spend on food and drinks. For a dad's night out, this is often the move. You get the atmosphere, you split the "cost" with everyone else in the bar, and you don't have to clean up afterwards.
+
+**The Group Buy**
+
+Get 4-5 dads together. Rotate hosting duties. Split the PPV cost. $80 divided by 5 is $16 each. Add in some food contributions and you've got a fight night party for under $30 per person that's better than any bar.
+
+This is the dad hack for UFC viewing. Build the group. Set the rotation. Make it a tradition.
+
+**Annual Budget: The Realistic Dad Plan**
+
+- ESPN+ annual: $110
+- 5 PPVs at home (the must-watch ones): $400
+- 3-4 bar nights for the good-not-great PPVs: ~$120
+- **Total: ~$630/year = $52.50/month**
+
+That's less than most cable packages, and you're only watching fights you actually want to see.
+
+---
+
+*The smart move: ESPN+ annual subscription, buy the 4-5 PPVs that matter, watch the rest at a bar or a buddy's house. Your wallet thanks you.*
+`,
+  },
+  {
+    slug: "greatest-rivalries-in-mma-history",
+    title: "The Greatest Rivalries in MMA History",
+    excerpt: "From personal vendettas to trilogy masterpieces. The 10 rivalries that defined the sport.",
+    category: "History",
+    date: "March 14, 2026",
+    content: `
+Every great sport needs great rivalries. MMA has produced some of the most intense, personal, and technically brilliant rivalries in the history of combat sports. Here are the ten that matter most.
+
+**1. Jon Jones vs. Daniel Cormier**
+
+The greatest rivalry in MMA history, and it's not close. Two generational talents who genuinely disliked each other. Jones was the prodigy who couldn't stay out of trouble. Cormier was the Olympic wrestler who did everything right and still couldn't win the one fight that mattered most.
+
+They fought twice. Jones won both times. The second was overturned due to a failed drug test. Cormier went on to become a two-division champion. Jones moved to heavyweight and dominated. The rivalry ended without a clean resolution, which somehow makes it more compelling.
+
+**2. Conor McGregor vs. Nate Diaz**
+
+This wasn't about belts. It was about egos. McGregor was the biggest star in the sport. Diaz was the guy who didn't care. When Diaz choked out McGregor at UFC 196, it was the biggest upset in modern UFC history. When McGregor won the rematch at UFC 202 in one of the best fights ever, it proved he was more than hype.
+
+The trilogy fight never happened. It probably should have.
+
+**3. Stipe Miocic vs. Daniel Cormier**
+
+A trilogy at heavyweight that delivered three completely different fights. Cormier knocked out Miocic in the first. Miocic adjusted and stopped Cormier in the second with body shots. The third was competitive until Miocic pulled away late. This rivalry had respect, adjustment, and heart -- everything a trilogy needs.
+
+**4. Chuck Liddell vs. Tito Ortiz**
+
+The rivalry that made the UFC mainstream. Liddell was the brawler with the mohawk. Ortiz was the heel who talked trash. Their fights on the early Spike TV cards drew numbers that proved MMA could be mainstream entertainment. Liddell won 2 of 3, and both became legends of the sport's growth era.
+
+**5. Dustin Poirier vs. Conor McGregor**
+
+Three fights, three different stories. McGregor starched Poirier in 2014. Poirier knocked out McGregor in 2021. The third fight ended with McGregor breaking his leg. The rivalry showed McGregor's decline and Poirier's evolution into one of the most complete lightweights ever.
+
+**6. Zhang Weili vs. Joanna Jedrzejczyk**
+
+UFC 248 was the fight that changed how people talked about women's MMA. Five rounds of non-stop action that left both fighters looking like they'd been through a war. Jedrzejczyk's forehead was literally deformed. It was violence as art, and it elevated both fighters forever.
+
+**7. Randy Couture vs. Chuck Liddell**
+
+Before Liddell vs. Ortiz, there was Couture vs. Liddell. The wrestler vs. the striker. Couture won the first fight. Liddell won the next two. It was the foundation for every "wrestler vs. striker" debate that's happened since.
+
+**8. Anderson Silva vs. Chael Sonnen**
+
+Sonnen talked more trash than anyone in the sport's history. He backed it up by dominating Silva for 4.5 rounds at UFC 117 before getting submitted. Silva was the untouchable champion. Sonnen was the guy who almost proved he wasn't. Their rivalry made both of them bigger stars.
+
+**9. Khabib Nurmagomedov vs. Conor McGregor**
+
+The build-up included a bus attack, religious trash talk, and the most toxic press conference in UFC history. The fight ended with Khabib choking out McGregor and jumping the fence to attack his corner. It was chaos, but the fight itself was a dominant Khabib performance that proved the grappler beats the striker at the highest level.
+
+**10. Cain Velasquez vs. Junior dos Santos**
+
+The best heavyweight trilogy of the modern era. JDS knocked out Cain in the first fight. Cain came back and dominated JDS for 10 rounds across two rematches in a way that redefined what heavyweights could do. Cain's pressure was otherworldly.
+
+---
+
+*Great rivalries aren't just about wins and losses. They're about the story. The human element. Two people who bring out the absolute best in each other, even when they can't stand each other. That's what makes this sport.*
+`,
+  },
+  {
+    slug: "training-mma-over-40-what-dads-need-to-know",
+    title: "Training MMA Over 40: What Dads Need to Know",
+    excerpt: "You're not 25 anymore. Here's how to train smart, avoid injuries, and actually enjoy martial arts as a grown man.",
+    category: "Training",
+    date: "March 14, 2026",
+    content: `
+You've been watching UFC for years. You know what a rear naked choke is. You've thought about training. Maybe you even looked up local gyms and then talked yourself out of it because you're 42 and your knees already hurt from playing basketball in 2019.
+
+Here's the thing: thousands of men over 40 train MMA. They're not trying to go pro. They're trying to stay in shape, learn something new, and have a hobby that isn't golf. Here's how to do it right.
+
+**Start With Jiu-Jitsu, Not Striking**
+
+Counterintuitive, but hear me out. Jiu-jitsu is lower impact than boxing or Muay Thai. You're not getting punched in the face. The intensity is controllable. You can tap at any time. And the learning curve is the most rewarding of any martial art -- there's always a new technique, a new position, a new puzzle to solve.
+
+Most gyms have a fundamentals class that's perfect for beginners. You'll learn basic positions, escapes, and submissions at a pace that doesn't destroy your body.
+
+**The Recovery Reality**
+
+At 25, you train hard and feel fine the next day. At 40+, you train moderately and feel it for three days. This isn't a sign of weakness -- it's biology. Your recovery protocol matters more than your training intensity.
+
+The non-negotiables:
+- **Sleep**: 7+ hours. This is when your body repairs itself. No shortcut.
+- **Hydration**: Before, during, and after training. Your joints will thank you.
+- **Stretching**: 10-15 minutes after every session. Hip flexors, hamstrings, shoulders, neck.
+- **Rest days**: At least 2 per week. Your ego says train more. Your body says don't.
+
+**Finding the Right Gym**
+
+Not every gym is right for a 40-year-old beginner. Here's what to look for:
+
+*Green flags*:
+- Separate fundamentals/beginner classes
+- Mixed age range (not just 22-year-olds)
+- Coaches who modify techniques for different body types
+- A culture that values learning over winning in sparring
+- Clean mats (seriously, check this)
+
+*Red flags*:
+- "We go hard every day" mentality
+- No fundamentals class -- you're thrown in with everyone
+- Coaches who roll with white belts like it's a title fight
+- Dirty facility
+
+**The Injury Prevention Mindset**
+
+Your number one job is to not get hurt. You have kids who need you to be functional. You have a job that requires your body to work. Training is supposed to enhance your life, not ruin your Tuesday.
+
+Rules for over-40 training:
+1. Tap early, tap often. Ego submissions lead to torn ligaments.
+2. Pick your sparring partners carefully. Roll with people your size or smaller until you know the culture.
+3. Skip the competition classes until you have 6+ months of fundamentals.
+4. If something hurts, stop. Not "push through it" -- stop. Get it checked.
+5. Tell your coach about any pre-existing injuries on day one.
+
+**What You'll Actually Get Out of It**
+
+After 3 months: you'll sleep better, you'll have more energy, you'll understand what you're watching on Saturday nights.
+
+After 6 months: you'll have a new social circle of training partners, a hobby that challenges you mentally and physically, and the quiet confidence that comes from knowing you can handle yourself.
+
+After a year: your kids will think you're cooler. Your wife will notice you're in better shape. You'll be the dad at the BBQ who can actually explain what's happening in the fight. And you'll wonder why you didn't start earlier.
+
+**The First Day**
+
+Show up. That's it. You don't need to be in shape. You don't need gear (most gyms loan gi's for your first class). You don't need to know anything. Just show up, be honest about your experience level, and be willing to feel dumb for an hour.
+
+Every black belt started as a clueless white belt who felt dumb on their first day. The only difference between them and the people who quit is that they kept showing up.
+
+---
+
+*Your local BJJ school almost certainly offers a free trial class. Go. The worst that happens is you learn something.*
+`,
+  },
 ];
