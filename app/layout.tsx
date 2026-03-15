@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Nav from "./components/Nav";
 import Link from "next/link";
+import { Bebas_Neue, Inter } from "next/font/google";
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -20,136 +35,132 @@ export const metadata: Metadata = {
   },
 };
 
+const FOOTER_SECTIONS = [
+  {
+    heading: "CONTENT",
+    links: [
+      { label: "Fighters", href: "/fighters" },
+      { label: "Events", href: "/events" },
+      { label: "History", href: "/history" },
+      { label: "Weight Classes", href: "/weight-classes" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
+  {
+    heading: "NETWORK",
+    links: [
+      { label: "UFC.com", href: "https://www.ufc.com" },
+      { label: "UFC Fight Pass", href: "https://ufcfightpass.com" },
+      { label: "ESPN MMA", href: "https://www.espn.com/mma/" },
+      { label: "Tapology", href: "https://www.tapology.com" },
+    ],
+  },
+  {
+    heading: "SITE",
+    links: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
+  },
+];
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
       <body>
-        {/* NAV */}
-        <header style={{
-          backgroundColor: "#080E18",
-          borderBottom: "3px solid #D42B2B",
-          padding: "0 1.5rem",
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-        }}>
-          <nav style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "64px",
-          }}>
-            <Link href="/" style={{
-              fontFamily: "'Oswald', sans-serif",
-              fontWeight: 700,
-              fontSize: "1.5rem",
-              color: "#EEE8DC",
-              textDecoration: "none",
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-            }}>
-              MMADADS.COM
-            </Link>
-            <div
-              className="nav-links"
-              style={{ display: "flex", gap: "2rem", alignItems: "center" }}
-            >
-              {[
-                { label: "FIGHT CARD", href: "/blog" },
-                { label: "BREAKDOWN", href: "/blog" },
-                { label: "BLOG", href: "/blog" },
-                { label: "PICKS", href: "/blog" },
-              ].map(({ label, href }) => (
-                <Link key={label} href={href} style={{
-                  fontFamily: "'Roboto Mono', monospace",
-                  fontWeight: 400,
-                  fontSize: "0.78rem",
-                  color: "#4A5568",
-                  textDecoration: "none",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                }}>
-                  {label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-        </header>
+        <Nav />
 
         <main>{children}</main>
 
         {/* FOOTER */}
         <footer style={{
-          backgroundColor: "#080E18",
-          borderTop: "1px solid rgba(238,232,220,0.1)",
-          padding: "3rem 1.5rem 2rem",
+          backgroundColor: "var(--surface)",
+          borderTop: "1px solid var(--border)",
+          padding: "4rem 1.5rem 2.5rem",
         }}>
-          <div style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-          }}>
-            <div style={{
-              fontFamily: "'Oswald', sans-serif",
-              fontWeight: 700,
-              fontSize: "1.6rem",
-              color: "#EEE8DC",
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-              marginBottom: "0.5rem",
-            }}>
-              MMADADS.COM
-            </div>
-            <div style={{
-              fontFamily: "'Merriweather', serif",
-              fontSize: "0.9rem",
-              color: "#4A5568",
-              marginBottom: "2rem",
-            }}>
-              MMA coverage for dads who know the sport.
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div style={{ marginBottom: "3rem" }}>
+              <div style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "2rem",
+                color: "var(--text)",
+                letterSpacing: "0.05em",
+                marginBottom: "0.5rem",
+                lineHeight: 1,
+              }}>
+                MMADADS<span style={{ color: "var(--red)" }}>.</span>COM
+              </div>
+              <div style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.9rem",
+                color: "var(--muted)",
+              }}>
+                MMA coverage for dads who know the sport.
+              </div>
             </div>
 
-            <div
-              className="footer-links-row"
-              style={{
-                display: "flex",
-                gap: "2rem",
-                flexWrap: "wrap",
-                marginBottom: "2rem",
-              }}
-            >
-              {[
-                { label: "BLOG", href: "/blog" },
-                { label: "FIGHT CARD", href: "/blog" },
-                { label: "PICKS", href: "/blog" },
-                { label: "BREAKDOWN", href: "/blog" },
-              ].map(({ label, href }) => (
-                <Link key={label} href={href} style={{
-                  fontFamily: "'Roboto Mono', monospace",
-                  fontSize: "0.75rem",
-                  color: "#4A5568",
-                  textDecoration: "none",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                }}>
-                  {label}
-                </Link>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: "2.5rem",
+              marginBottom: "3rem",
+            }}>
+              {FOOTER_SECTIONS.map((section) => (
+                <div key={section.heading}>
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.65rem",
+                    color: "var(--muted)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    marginBottom: "1rem",
+                  }}>
+                    {section.heading}
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                    {section.links.map(({ label, href }) => (
+                      <Link key={label} href={href} style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: "0.88rem",
+                        color: "var(--muted)",
+                        textDecoration: "none",
+                      }}>
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
 
             <div style={{
-              borderTop: "1px solid rgba(74,85,104,0.3)",
+              borderTop: "1px solid var(--border)",
               paddingTop: "1.5rem",
-              fontFamily: "'Roboto Mono', monospace",
-              fontSize: "0.72rem",
-              color: "#4A5568",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "0.75rem",
             }}>
-              &copy; {new Date().getFullYear()} MMADADS.COM. All rights reserved. Affiliate links may earn a commission.
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.72rem",
+                color: "var(--muted)",
+              }}>
+                &copy; {new Date().getFullYear()} MMADADS.COM. All rights reserved.
+              </div>
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                color: "var(--muted)",
+                opacity: 0.6,
+              }}>
+                Affiliate links may earn a commission.
+              </div>
             </div>
           </div>
         </footer>

@@ -26,52 +26,55 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const COLORS = {
-  dark: "#080E18",
-  navy: "#0F1C2E",
-  navyLight: "#141F30",
-  red: "#D42B2B",
-  slate: "#4A5568",
-  bone: "#EEE8DC",
-  gold: "#E8A020",
-};
+function SectionDivider() {
+  return (
+    <div style={{
+      borderTop: "1px solid var(--border)",
+      marginBottom: "2.5rem",
+      paddingTop: "2.5rem",
+    }} />
+  );
+}
 
-const FONT = {
-  display: "'Oswald', sans-serif",
-  body: "'Merriweather', Georgia, serif",
-  mono: "'Roboto Mono', monospace",
-};
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{
+      fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+      fontSize: "1.3rem",
+      color: "var(--text)",
+      letterSpacing: "0.06em",
+      paddingBottom: "0.75rem",
+      borderBottom: "1px solid var(--border)",
+      marginBottom: "1.75rem",
+    }}>
+      {children}
+    </div>
+  );
+}
 
 function StatBox({ label, value }: { label: string; value: string }) {
   return (
-    <div
-      style={{
-        backgroundColor: COLORS.navyLight,
-        padding: "1rem 1.25rem",
-        borderBottom: `2px solid ${COLORS.slate}`,
-      }}
-    >
-      <div
-        style={{
-          fontFamily: FONT.mono,
-          fontSize: "0.6rem",
-          color: COLORS.slate,
-          textTransform: "uppercase",
-          letterSpacing: "0.12em",
-          marginBottom: "0.35rem",
-        }}
-      >
+    <div style={{
+      backgroundColor: "var(--bg)",
+      border: "1px solid var(--border)",
+      padding: "1rem 1.25rem",
+    }}>
+      <div style={{
+        fontFamily: "var(--font-mono)",
+        fontSize: "0.58rem",
+        color: "var(--muted)",
+        textTransform: "uppercase",
+        letterSpacing: "0.12em",
+        marginBottom: "0.4rem",
+      }}>
         {label}
       </div>
-      <div
-        style={{
-          fontFamily: FONT.display,
-          fontWeight: 700,
-          fontSize: "1rem",
-          color: COLORS.bone,
-          textTransform: "uppercase",
-        }}
-      >
+      <div style={{
+        fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+        fontSize: "1.1rem",
+        color: "var(--text)",
+        letterSpacing: "0.04em",
+      }}>
         {value}
       </div>
     </div>
@@ -105,112 +108,108 @@ export default async function FighterPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
       />
 
-      {/* Breadcrumb + Hero */}
-      <section
-        style={{
-          backgroundColor: COLORS.dark,
-          borderBottom: `3px solid ${fighter.isChampion ? COLORS.gold : COLORS.red}`,
-          padding: "2.5rem 1.5rem 3rem",
-        }}
-      >
+      {/* Hero */}
+      <section style={{
+        backgroundColor: "var(--bg)",
+        borderBottom: `2px solid ${fighter.isChampion ? "var(--gold)" : "var(--red)"}`,
+        padding: "3rem 1.5rem 4rem",
+      }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           {/* Breadcrumb */}
-          <div
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.68rem",
-              color: COLORS.slate,
-              letterSpacing: "0.08em",
-              marginBottom: "2rem",
-              display: "flex",
-              gap: "0.5rem",
-              alignItems: "center",
-            }}
-          >
-            <Link href="/" style={{ color: COLORS.slate, textDecoration: "none" }}>HOME</Link>
-            <span style={{ color: COLORS.slate }}>/</span>
-            <Link href="/fighters" style={{ color: COLORS.slate, textDecoration: "none" }}>FIGHTERS</Link>
-            <span style={{ color: COLORS.slate }}>/</span>
-            <span style={{ color: COLORS.bone }}>{fighter.name.toUpperCase()}</span>
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.65rem",
+            color: "var(--muted)",
+            letterSpacing: "0.08em",
+            marginBottom: "2.5rem",
+            display: "flex",
+            gap: "0.5rem",
+            alignItems: "center",
+          }}>
+            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }}>HOME</Link>
+            <span>/</span>
+            <Link href="/fighters" style={{ color: "var(--muted)", textDecoration: "none" }}>FIGHTERS</Link>
+            <span>/</span>
+            <span style={{ color: "var(--text)" }}>{fighter.name.toUpperCase()}</span>
           </div>
 
           <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap", alignItems: "flex-start" }}>
-            {/* Name & Info */}
-            <div style={{ flex: "1 1 400px" }}>
+            {/* Name block */}
+            <div style={{ flex: "1 1 400px", minWidth: 0 }}>
               {fighter.isChampion && (
-                <div
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.65rem",
-                    color: COLORS.gold,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.2em",
-                    marginBottom: "0.75rem",
-                  }}
-                >
+                <div style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.65rem",
+                  color: "var(--gold)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.2em",
+                  marginBottom: "0.85rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}>
+                  <span style={{
+                    display: "inline-block",
+                    width: "6px",
+                    height: "6px",
+                    backgroundColor: "var(--gold)",
+                    borderRadius: "50%",
+                  }} />
                   UFC CHAMPION — {fighter.weightClass.toUpperCase()}
                 </div>
               )}
-              <h1
-                style={{
-                  fontFamily: FONT.display,
-                  fontWeight: 700,
-                  fontSize: "clamp(42px, 7vw, 80px)",
-                  color: COLORS.bone,
-                  textTransform: "uppercase",
-                  letterSpacing: "-0.01em",
-                  lineHeight: 0.92,
-                  marginBottom: "0.75rem",
-                }}
-              >
+
+              <h1 style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(3rem, 8vw, 7rem)",
+                color: "var(--text)",
+                letterSpacing: "0.01em",
+                lineHeight: 0.9,
+                marginBottom: "0.75rem",
+              }}>
                 {fighter.name}
               </h1>
+
               {fighter.nickname && (
-                <div
-                  style={{
-                    fontFamily: FONT.body,
-                    fontStyle: "italic",
-                    fontSize: "1.1rem",
-                    color: COLORS.slate,
-                    marginBottom: "0.75rem",
-                  }}
-                >
+                <div style={{
+                  fontFamily: "var(--font-body)",
+                  fontStyle: "italic",
+                  fontSize: "1.1rem",
+                  color: "var(--muted)",
+                  marginBottom: "1rem",
+                }}>
                   &ldquo;{fighter.nickname}&rdquo;
                 </div>
               )}
-              <div
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  color: COLORS.red,
-                  letterSpacing: "0.04em",
-                  marginBottom: "0.5rem",
-                }}
-              >
+
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "1.5rem",
+                fontWeight: 500,
+                color: fighter.isChampion ? "var(--gold)" : "var(--red)",
+                letterSpacing: "0.06em",
+                marginBottom: "0.5rem",
+              }}>
                 {fighter.record}
               </div>
-              <div
-                style={{
-                  fontFamily: FONT.body,
-                  fontSize: "0.9rem",
-                  color: COLORS.slate,
-                }}
-              >
+
+              <div style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.88rem",
+                color: "var(--muted)",
+              }}>
                 {fighter.hometown}
               </div>
             </div>
 
-            {/* Stats Grid */}
-            <div
-              style={{
-                flex: "0 0 340px",
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "1px",
-                backgroundColor: `rgba(238,232,220,0.06)`,
-              }}
-            >
+            {/* Stats grid */}
+            <div style={{
+              flex: "0 0 340px",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "1px",
+              backgroundColor: "var(--border)",
+            }}>
               <StatBox label="Weight Class" value={fighter.weightClass} />
               <StatBox label="Age" value={`${fighter.age}`} />
               <StatBox label="Height" value={fighter.height} />
@@ -223,21 +222,18 @@ export default async function FighterPage({ params }: Props) {
       </section>
 
       {/* Bio */}
-      <section style={{ backgroundColor: COLORS.navy, padding: "4rem 1.5rem" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr", gap: "3rem" }}>
-          <div>
-            <SectionLabel>Overview</SectionLabel>
+      <section style={{ backgroundColor: "var(--surface)", padding: "4rem 1.5rem" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <SectionLabel>Overview</SectionLabel>
+          <div style={{ maxWidth: "760px" }}>
             {fighter.bio.split("\n\n").map((para, i) => (
-              <p
-                key={i}
-                style={{
-                  fontFamily: FONT.body,
-                  fontSize: "1rem",
-                  color: COLORS.slate,
-                  lineHeight: 1.85,
-                  marginBottom: "1.25rem",
-                }}
-              >
+              <p key={i} style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "1rem",
+                color: "var(--muted)",
+                lineHeight: 1.85,
+                marginBottom: "1.25rem",
+              }}>
                 {para.trim()}
               </p>
             ))}
@@ -246,61 +242,51 @@ export default async function FighterPage({ params }: Props) {
       </section>
 
       {/* Career Highlights + Signature Moves */}
-      <section style={{ backgroundColor: COLORS.dark, padding: "4rem 1.5rem" }}>
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "3rem",
-          }}
-        >
-          {/* Career Highlights */}
+      <section style={{ backgroundColor: "var(--bg)", padding: "4rem 1.5rem" }}>
+        <div style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "4rem",
+        }}>
           <div>
             <SectionLabel>Career Highlights</SectionLabel>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
               {fighter.careerHighlights.map((h, i) => (
-                <li
-                  key={i}
-                  style={{
-                    fontFamily: FONT.body,
-                    fontSize: "0.9rem",
-                    color: COLORS.slate,
-                    lineHeight: 1.6,
-                    paddingLeft: "1.25rem",
-                    borderLeft: `3px solid ${COLORS.gold}`,
-                  }}
-                >
+                <li key={i} style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.9rem",
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                  paddingLeft: "1rem",
+                  borderLeft: "2px solid var(--gold)",
+                }}>
                   {h}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Signature Moves */}
           <div>
             <SectionLabel>Signature Moves</SectionLabel>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.85rem" }}>
               {fighter.signatureMoves.map((m, i) => (
-                <li
-                  key={i}
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.82rem",
-                    color: COLORS.bone,
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "0.75rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      color: COLORS.red,
-                      fontWeight: 700,
-                      minWidth: "1rem",
-                    }}
-                  >
+                <li key={i} style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.82rem",
+                  color: "var(--text)",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.85rem",
+                  lineHeight: 1.5,
+                }}>
+                  <span style={{
+                    color: "var(--red)",
+                    fontWeight: 700,
+                    minWidth: "1.5rem",
+                    letterSpacing: "0.02em",
+                  }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {m}
@@ -312,46 +298,37 @@ export default async function FighterPage({ params }: Props) {
       </section>
 
       {/* Biggest Wins */}
-      <section style={{ backgroundColor: COLORS.navyLight, padding: "4rem 1.5rem" }}>
+      <section style={{ backgroundColor: "var(--surface)", padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <SectionLabel>Biggest Wins</SectionLabel>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-              gap: "1rem",
-            }}
-          >
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+            gap: "1px",
+            backgroundColor: "var(--border)",
+          }}>
             {fighter.biggestWins.map((win, i) => (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: COLORS.dark,
-                  borderLeft: `4px solid ${COLORS.red}`,
-                  padding: "1rem 1.25rem",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.62rem",
-                    color: COLORS.slate,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    marginBottom: "0.4rem",
-                  }}
-                >
+              <div key={i} style={{
+                backgroundColor: "var(--bg)",
+                padding: "1.25rem",
+                borderLeft: "2px solid var(--red)",
+              }}>
+                <div style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.58rem",
+                  color: "var(--muted)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: "0.4rem",
+                }}>
                   WIN #{i + 1}
                 </div>
-                <div
-                  style={{
-                    fontFamily: FONT.display,
-                    fontWeight: 600,
-                    fontSize: "0.95rem",
-                    color: COLORS.bone,
-                    textTransform: "uppercase",
-                  }}
-                >
+                <div style={{
+                  fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                  fontSize: "1rem",
+                  color: "var(--text)",
+                  letterSpacing: "0.04em",
+                }}>
                   {win}
                 </div>
               </div>
@@ -361,38 +338,32 @@ export default async function FighterPage({ params }: Props) {
       </section>
 
       {/* Dad Take */}
-      <section
-        style={{
-          backgroundColor: COLORS.bone,
-          padding: "4rem 1.5rem",
-          borderTop: `3px solid ${COLORS.dark}`,
-        }}
-      >
+      <section style={{
+        backgroundColor: "var(--bg)",
+        borderTop: "1px solid var(--border)",
+        padding: "4rem 1.5rem",
+      }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <div
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.7rem",
-              color: COLORS.red,
-              textTransform: "uppercase",
-              letterSpacing: "0.2em",
-              marginBottom: "1rem",
-            }}
-          >
-            The Dad Take
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.65rem",
+            color: "var(--gold)",
+            textTransform: "uppercase",
+            letterSpacing: "0.2em",
+            marginBottom: "1.25rem",
+          }}>
+            THE DAD TAKE
           </div>
-          <blockquote
-            style={{
-              fontFamily: FONT.body,
-              fontSize: "1.15rem",
-              color: COLORS.dark,
-              lineHeight: 1.85,
-              borderLeft: `5px solid ${COLORS.red}`,
-              paddingLeft: "1.5rem",
-              margin: 0,
-              fontStyle: "italic",
-            }}
-          >
+          <blockquote style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "1.1rem",
+            color: "var(--muted)",
+            lineHeight: 1.85,
+            borderLeft: "3px solid var(--gold)",
+            paddingLeft: "1.75rem",
+            margin: 0,
+            fontStyle: "italic",
+          }}>
             {fighter.dadTake}
           </blockquote>
         </div>
@@ -400,48 +371,39 @@ export default async function FighterPage({ params }: Props) {
 
       {/* Related Fighters */}
       {related.length > 0 && (
-        <section style={{ backgroundColor: COLORS.dark, padding: "4rem 1.5rem" }}>
+        <section style={{
+          backgroundColor: "var(--surface)",
+          borderTop: "1px solid var(--border)",
+          padding: "4rem 1.5rem",
+        }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <SectionLabel>More {fighter.weightClass} Fighters</SectionLabel>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                gap: "1rem",
-              }}
-            >
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: "1px",
+              backgroundColor: "var(--border)",
+            }}>
               {related.map((r) => (
-                <Link
-                  key={r.slug}
-                  href={`/fighters/${r.slug}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: COLORS.navy,
-                      borderLeft: `3px solid ${r.isChampion ? COLORS.gold : COLORS.red}`,
-                      padding: "1.25rem",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: FONT.display,
-                        fontWeight: 700,
-                        fontSize: "1rem",
-                        color: COLORS.bone,
-                        textTransform: "uppercase",
-                        marginBottom: "0.3rem",
-                      }}
-                    >
+                <Link key={r.slug} href={`/fighters/${r.slug}`} style={{ textDecoration: "none" }}>
+                  <div className="post-card" style={{
+                    padding: "1.25rem",
+                    borderTop: `2px solid ${r.isChampion ? "var(--gold)" : "var(--surface)"}`,
+                  }}>
+                    <div style={{
+                      fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                      fontSize: "1.1rem",
+                      color: "var(--text)",
+                      letterSpacing: "0.02em",
+                      marginBottom: "0.3rem",
+                    }}>
                       {r.name}
                     </div>
-                    <div
-                      style={{
-                        fontFamily: FONT.mono,
-                        fontSize: "0.72rem",
-                        color: COLORS.red,
-                      }}
-                    >
+                    <div style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.75rem",
+                      color: r.isChampion ? "var(--gold)" : "var(--red)",
+                    }}>
                       {r.record}
                     </div>
                   </div>
@@ -452,25 +414,5 @@ export default async function FighterPage({ params }: Props) {
         </section>
       )}
     </>
-  );
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      style={{
-        fontFamily: "'Oswald', sans-serif",
-        fontWeight: 700,
-        fontSize: "1.2rem",
-        color: "#EEE8DC",
-        textTransform: "uppercase",
-        letterSpacing: "0.06em",
-        paddingBottom: "0.75rem",
-        borderBottom: "2px solid rgba(212,43,43,0.4)",
-        marginBottom: "1.5rem",
-      }}
-    >
-      {children}
-    </div>
   );
 }

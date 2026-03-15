@@ -27,6 +27,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function formatInline(text: string): string {
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong style="color:var(--text);font-weight:700">$1</strong>');
+  return text;
+}
+
+function formatInlineLinks(text: string): string {
+  text = formatInline(text);
+  text = text.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline">$1</a>'
+  );
+  return text;
+}
+
 function renderContent(content: string) {
   const lines = content.trim().split("\n");
   const elements: React.ReactNode[] = [];
@@ -38,13 +52,14 @@ function renderContent(content: string) {
     if (line.startsWith("## ")) {
       elements.push(
         <h2 key={i} style={{
-          fontSize: "1.5rem",
-          fontWeight: 800,
-          color: "var(--cream)",
-          marginTop: "2.5rem",
-          marginBottom: "0.75rem",
-          paddingBottom: "0.4rem",
-          borderBottom: "2px solid rgba(217,119,6,0.3)",
+          fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+          fontSize: "1.75rem",
+          color: "var(--text)",
+          letterSpacing: "0.04em",
+          marginTop: "3rem",
+          marginBottom: "1rem",
+          paddingBottom: "0.5rem",
+          borderBottom: "1px solid var(--border)",
         }}>
           {line.slice(3)}
         </h2>
@@ -52,9 +67,10 @@ function renderContent(content: string) {
     } else if (line.startsWith("**") && line.endsWith("**") && line.length > 4) {
       elements.push(
         <h3 key={i} style={{
-          fontSize: "1.15rem",
-          fontWeight: 800,
-          color: "var(--cream)",
+          fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+          fontSize: "1.2rem",
+          color: "var(--text)",
+          letterSpacing: "0.04em",
           marginTop: "2rem",
           marginBottom: "0.6rem",
         }}>
@@ -65,17 +81,17 @@ function renderContent(content: string) {
       elements.push(
         <hr key={i} style={{
           border: "none",
-          borderTop: "1px solid rgba(217,119,6,0.3)",
-          margin: "2.5rem 0",
+          borderTop: "1px solid var(--border)",
+          margin: "3rem 0",
         }} />
       );
     } else if (line.startsWith("*") && line.endsWith("*") && !line.startsWith("**")) {
-      // Italic affiliate paragraph
       const inner = line.slice(1, -1);
       elements.push(
         <p key={i} style={{
-          fontSize: "0.9rem",
-          opacity: 0.75,
+          fontFamily: "var(--font-body)",
+          fontSize: "0.875rem",
+          color: "var(--muted)",
           fontStyle: "italic",
           marginTop: "1rem",
           lineHeight: 1.7,
@@ -84,14 +100,14 @@ function renderContent(content: string) {
         />
       );
     } else if (line.trim() === "") {
-      // skip blank lines
+      // skip blank
     } else {
-      // Regular paragraph -- handle inline bold
       elements.push(
         <p key={i} style={{
-          fontSize: "1.05rem",
-          lineHeight: 1.8,
-          color: "rgba(250,250,248,0.88)",
+          fontFamily: "var(--font-body)",
+          fontSize: "1rem",
+          lineHeight: 1.85,
+          color: "var(--muted)",
           marginBottom: "0",
         }}
           dangerouslySetInnerHTML={{ __html: formatInline(line) }}
@@ -102,22 +118,6 @@ function renderContent(content: string) {
   }
 
   return elements;
-}
-
-function formatInline(text: string): string {
-  // Bold
-  text = text.replace(/\*\*(.+?)\*\*/g, '<strong style="color:var(--cream);font-weight:700">$1</strong>');
-  return text;
-}
-
-function formatInlineLinks(text: string): string {
-  text = formatInline(text);
-  // Markdown links [text](url)
-  text = text.replace(
-    /\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,
-    '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline">$1</a>'
-  );
-  return text;
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -139,58 +139,74 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       {/* Hero */}
       <section style={{
-        background: `linear-gradient(180deg, var(--blue) 0%, var(--dark) 100%)`,
-        padding: "3rem 1.5rem 2.5rem",
-        borderBottom: "2px solid var(--gold)",
+        backgroundColor: "var(--bg)",
+        borderBottom: "1px solid var(--border)",
+        padding: "4rem 1.5rem 3.5rem",
       }}>
-        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <div style={{ marginBottom: "1rem" }}>
-            <Link href="/blog" style={{
-              color: "var(--gold)",
-              fontSize: "0.82rem",
-              fontWeight: 600,
-              textDecoration: "none",
-              opacity: 0.85,
-            }}>
-              ← All Posts
-            </Link>
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+          {/* Breadcrumb */}
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.65rem",
+            color: "var(--muted)",
+            letterSpacing: "0.08em",
+            marginBottom: "2rem",
+            display: "flex",
+            gap: "0.5rem",
+            alignItems: "center",
+          }}>
+            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }}>HOME</Link>
+            <span>/</span>
+            <Link href="/blog" style={{ color: "var(--muted)", textDecoration: "none" }}>BLOG</Link>
+            <span>/</span>
+            <span style={{ color: "var(--text)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {post.title.slice(0, 40)}{post.title.length > 40 ? "..." : ""}
+            </span>
           </div>
+
+          {/* Category tag */}
           <div style={{
             display: "inline-block",
-            backgroundColor: "rgba(217,119,6,0.15)",
-            color: "var(--gold)",
-            fontSize: "0.7rem",
-            fontWeight: 700,
-            letterSpacing: "0.1em",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.62rem",
+            color: "var(--red)",
             textTransform: "uppercase",
-            padding: "0.3rem 0.75rem",
-            borderRadius: "2px",
-            marginBottom: "1rem",
+            letterSpacing: "0.14em",
+            border: "1px solid rgba(239,68,68,0.3)",
+            padding: "0.25rem 0.65rem",
+            marginBottom: "1.25rem",
           }}>
             {post.category}
           </div>
+
           <h1 style={{
-            fontSize: "clamp(1.6rem, 4vw, 2.5rem)",
-            fontWeight: 900,
-            lineHeight: 1.15,
-            marginBottom: "1rem",
-            color: "var(--cream)",
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            color: "var(--text)",
+            letterSpacing: "0.02em",
+            lineHeight: 1.0,
+            marginBottom: "1.25rem",
           }}>
             {post.title}
           </h1>
+
           <p style={{
+            fontFamily: "var(--font-body)",
             fontSize: "1.1rem",
-            opacity: 0.72,
-            lineHeight: 1.65,
-            marginBottom: "1.25rem",
+            color: "var(--muted)",
+            lineHeight: 1.7,
+            marginBottom: "1.5rem",
           }}>
             {post.excerpt}
           </p>
+
           <div style={{
-            fontSize: "0.82rem",
-            opacity: 0.5,
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.72rem",
+            color: "var(--muted)",
             display: "flex",
             gap: "1.5rem",
+            opacity: 0.7,
           }}>
             <span>Published {post.date}</span>
             <span>MMADads.com</span>
@@ -198,42 +214,43 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Article */}
-      <article style={{
-        maxWidth: "780px",
+      {/* Article body */}
+      <article className="card-hover" style={{
+        maxWidth: "760px",
         margin: "0 auto",
-        padding: "3rem 1.5rem",
+        padding: "3.5rem 1.5rem",
         display: "flex",
         flexDirection: "column",
-        gap: "1.25rem",
+        gap: "1.35rem",
       }}>
         {renderContent(post.content)}
       </article>
 
-      {/* Affiliate Block */}
+      {/* Affiliate block */}
       <section style={{
-        maxWidth: "780px",
+        maxWidth: "760px",
         margin: "0 auto",
-        padding: "0 1.5rem 3rem",
+        padding: "0 1.5rem 3.5rem",
       }}>
         <div style={{
-          backgroundColor: "var(--blue)",
-          border: "1px solid rgba(217,119,6,0.3)",
-          borderRadius: "6px",
+          backgroundColor: "var(--surface)",
+          border: "1px solid var(--border)",
           padding: "2rem",
         }}>
-          <h3 style={{
-            fontSize: "1rem",
-            fontWeight: 800,
-            marginBottom: "1.25rem",
+          <div style={{
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "1.2rem",
             color: "var(--gold)",
+            letterSpacing: "0.05em",
+            marginBottom: "1.5rem",
           }}>
-            MMA Dad Essentials
-          </h3>
+            MMA DAD ESSENTIALS
+          </div>
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1rem",
+            gap: "1px",
+            backgroundColor: "var(--border)",
           }}>
             {[
               { name: "UFC Fight Pass", desc: "Every event live + full fight library.", href: "https://ufcfightpass.com" },
@@ -247,26 +264,47 @@ export default async function BlogPostPage({ params }: Props) {
                 rel="noopener noreferrer"
                 style={{
                   display: "block",
-                  backgroundColor: "rgba(8,10,15,0.4)",
-                  border: "1px solid rgba(217,119,6,0.2)",
-                  borderRadius: "4px",
-                  padding: "1rem",
+                  backgroundColor: "var(--bg)",
+                  padding: "1.25rem",
                   textDecoration: "none",
+                  transition: "background-color 0.15s",
                 }}
               >
-                <div style={{ fontWeight: 700, color: "var(--cream)", marginBottom: "0.3rem", fontSize: "0.9rem" }}>
+                <div style={{
+                  fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                  fontSize: "1rem",
+                  color: "var(--text)",
+                  letterSpacing: "0.04em",
+                  marginBottom: "0.3rem",
+                }}>
                   {aff.name}
                 </div>
-                <div style={{ fontSize: "0.8rem", opacity: 0.65, lineHeight: 1.5 }}>
+                <div style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.8rem",
+                  color: "var(--muted)",
+                  lineHeight: 1.5,
+                  marginBottom: "0.5rem",
+                }}>
                   {aff.desc}
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "var(--gold)", marginTop: "0.5rem", fontWeight: 600 }}>
-                  Learn more →
+                <div style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.65rem",
+                  color: "var(--gold)",
+                }}>
+                  Learn more &rarr;
                 </div>
               </a>
             ))}
           </div>
-          <p style={{ fontSize: "0.7rem", opacity: 0.4, marginTop: "1rem" }}>
+          <p style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.62rem",
+            color: "var(--muted)",
+            marginTop: "1rem",
+            opacity: 0.5,
+          }}>
             Affiliate links (tag: mmadads-20). We earn a commission at no cost to you.
           </p>
         </div>
@@ -275,47 +313,54 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Related Posts */}
       {displayRelated.length > 0 && (
         <section style={{
-          maxWidth: "780px",
+          maxWidth: "760px",
           margin: "0 auto",
-          padding: "0 1.5rem 4rem",
+          padding: "0 1.5rem 5rem",
         }}>
-          <h2 style={{
-            fontSize: "1.25rem",
-            fontWeight: 800,
-            marginBottom: "1.25rem",
-            paddingBottom: "0.5rem",
-            borderBottom: "2px solid rgba(217,119,6,0.25)",
+          <div style={{
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "1.4rem",
+            color: "var(--text)",
+            letterSpacing: "0.05em",
+            marginBottom: "1.5rem",
+            paddingBottom: "0.75rem",
+            borderBottom: "1px solid var(--border)",
           }}>
-            More from MMA Dads
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            MORE FROM MMA DADS
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1px", backgroundColor: "var(--border)" }}>
             {displayRelated.map((related) => (
               <Link
                 key={related.slug}
                 href={`/blog/${related.slug}`}
                 style={{ textDecoration: "none" }}
               >
-                <div style={{
-                  borderLeft: "3px solid var(--gold)",
-                  paddingLeft: "1rem",
-                  paddingTop: "0.2rem",
-                  paddingBottom: "0.2rem",
-                }}>
+                <div className="related-card" style={{
+                  padding: "1.25rem 1.5rem",
+                  transition: "border-color 0.15s, background-color 0.15s",
+                  minHeight: "44px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+                >
                   <div style={{
-                    fontSize: "0.68rem",
-                    color: "var(--gold)",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.58rem",
+                    color: "var(--red)",
                     fontWeight: 700,
                     textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "0.3rem",
+                    letterSpacing: "0.1em",
+                    marginBottom: "0.35rem",
                   }}>
                     {related.category}
                   </div>
                   <div style={{
-                    fontSize: "0.95rem",
-                    fontWeight: 700,
-                    color: "var(--cream)",
-                    lineHeight: 1.35,
+                    fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                    fontSize: "1rem",
+                    color: "var(--text)",
+                    letterSpacing: "0.03em",
+                    lineHeight: 1.15,
                   }}>
                     {related.title}
                   </div>

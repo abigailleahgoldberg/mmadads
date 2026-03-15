@@ -4,22 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { fighters, weightClasses } from "../data/fighters";
 
-const COLORS = {
-  dark: "#080E18",
-  navy: "#0F1C2E",
-  navyLight: "#141F30",
-  red: "#D42B2B",
-  slate: "#4A5568",
-  bone: "#EEE8DC",
-  gold: "#E8A020",
-};
-
-const FONT = {
-  display: "'Oswald', sans-serif",
-  body: "'Merriweather', Georgia, serif",
-  mono: "'Roboto Mono', monospace",
-};
-
 export default function FightersPage() {
   const [activeClass, setActiveClass] = useState<string>("All");
 
@@ -33,93 +17,95 @@ export default function FightersPage() {
   return (
     <>
       {/* Header */}
-      <section
-        style={{
-          backgroundColor: COLORS.dark,
-          borderBottom: `3px solid ${COLORS.red}`,
-          padding: "4rem 1.5rem 3rem",
-        }}
-      >
+      <section style={{
+        backgroundColor: "var(--bg)",
+        borderBottom: "1px solid var(--border)",
+        padding: "5rem 1.5rem 3.5rem",
+      }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.72rem",
-              color: COLORS.red,
-              textTransform: "uppercase",
-              letterSpacing: "0.2em",
-              marginBottom: "1rem",
-            }}
-          >
+          {/* Breadcrumb */}
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.65rem",
+            color: "var(--muted)",
+            letterSpacing: "0.08em",
+            marginBottom: "2rem",
+            display: "flex",
+            gap: "0.5rem",
+            alignItems: "center",
+          }}>
+            <Link href="/" style={{ color: "var(--muted)", textDecoration: "none" }}>HOME</Link>
+            <span>/</span>
+            <span style={{ color: "var(--text)" }}>FIGHTERS</span>
+          </div>
+
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            color: "var(--red)",
+            textTransform: "uppercase",
+            letterSpacing: "0.18em",
+            marginBottom: "0.75rem",
+          }}>
             FIGHTER DATABASE
           </div>
-          <h1
-            style={{
-              fontFamily: FONT.display,
-              fontWeight: 700,
-              fontSize: "clamp(36px, 6vw, 72px)",
-              color: COLORS.bone,
-              textTransform: "uppercase",
-              letterSpacing: "-0.01em",
-              lineHeight: 0.95,
-              marginBottom: "1.5rem",
-            }}
-          >
+          <h1 style={{
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "clamp(3rem, 8vw, 6rem)",
+            color: "var(--text)",
+            letterSpacing: "0.02em",
+            lineHeight: 0.92,
+            marginBottom: "1.5rem",
+          }}>
             FIGHTERS
           </h1>
-          <p
-            style={{
-              fontFamily: FONT.body,
-              fontSize: "1rem",
-              color: COLORS.slate,
-              lineHeight: 1.7,
-              maxWidth: "600px",
-            }}
-          >
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "1rem",
+            color: "var(--muted)",
+            lineHeight: 1.7,
+            maxWidth: "560px",
+          }}>
             Every fighter in our database — real records, real bios, real dad takes. Filter by weight class or browse the full roster.
           </p>
         </div>
       </section>
 
-      {/* Weight Class Filter */}
-      <section
-        style={{
-          backgroundColor: COLORS.navy,
-          borderBottom: `1px solid rgba(238,232,220,0.08)`,
-          padding: "1.25rem 1.5rem",
-          position: "sticky",
-          top: "64px",
-          zIndex: 50,
-          overflowX: "auto",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "flex",
-            gap: "0.5rem",
-            flexWrap: "nowrap",
-          }}
-        >
+      {/* Filter tabs */}
+      <section style={{
+        backgroundColor: "var(--surface)",
+        borderBottom: "1px solid var(--border)",
+        position: "sticky",
+        top: "64px",
+        zIndex: 50,
+        overflowX: "auto",
+      }}>
+        <div style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "0 1.5rem",
+          display: "flex",
+          gap: "0.25rem",
+          flexWrap: "nowrap",
+        }}>
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveClass(tab)}
               style={{
-                fontFamily: FONT.mono,
-                fontSize: "0.68rem",
-                fontWeight: 700,
-                letterSpacing: "0.1em",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.7rem",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                padding: "0.45rem 0.85rem",
+                padding: "0 1rem",
                 border: "none",
                 cursor: "pointer",
                 whiteSpace: "nowrap",
-                backgroundColor:
-                  activeClass === tab ? COLORS.red : "transparent",
-                color:
-                  activeClass === tab ? COLORS.bone : COLORS.slate,
+                height: "52px",
+                minHeight: "44px",
+                backgroundColor: "transparent",
+                color: activeClass === tab ? "var(--text)" : "var(--muted)",
+                borderBottom: activeClass === tab ? "2px solid var(--red)" : "2px solid transparent",
                 transition: "all 0.15s",
               }}
             >
@@ -129,138 +115,136 @@ export default function FightersPage() {
         </div>
       </section>
 
-      {/* Fighter Grid */}
-      <section
-        style={{
-          backgroundColor: COLORS.dark,
-          padding: "3rem 1.5rem 5rem",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.68rem",
-              color: COLORS.slate,
-              letterSpacing: "0.1em",
-              marginBottom: "1.5rem",
-            }}
-          >
-            {filteredFighters.length} FIGHTERS
+      {/* Fighter grid */}
+      <section style={{
+        backgroundColor: "var(--bg)",
+        padding: "3rem 1.5rem 5rem",
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.65rem",
+            color: "var(--muted)",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            marginBottom: "2rem",
+          }}>
+            {filteredFighters.length} FIGHTER{filteredFighters.length !== 1 ? "S" : ""}
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "1.25rem",
-            }}
-          >
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: "1px",
+            backgroundColor: "var(--border)",
+          }}>
             {filteredFighters.map((fighter) => (
               <Link
                 key={fighter.slug}
                 href={`/fighters/${fighter.slug}`}
                 style={{ textDecoration: "none" }}
               >
-                <article
-                  style={{
-                    backgroundColor: COLORS.navy,
-                    borderLeft: `4px solid ${fighter.isChampion ? COLORS.gold : COLORS.red}`,
-                    padding: "1.5rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.5rem",
-                    cursor: "pointer",
-                    transition: "background-color 0.15s",
-                  }}
+                <article style={{
+                  backgroundColor: "var(--surface)",
+                  padding: "1.75rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.5rem",
+                  cursor: "pointer",
+                  height: "100%",
+                  transition: "background-color 0.15s",
+                  borderTop: fighter.isChampion ? "2px solid var(--gold)" : "2px solid transparent",
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--surface-elevated)")}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--surface)")}
                 >
                   {fighter.isChampion && (
-                    <div
-                      style={{
-                        fontFamily: FONT.mono,
-                        fontSize: "0.6rem",
-                        color: COLORS.gold,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.15em",
-                        marginBottom: "0.25rem",
-                      }}
-                    >
+                    <div style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.58rem",
+                      color: "var(--gold)",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.15em",
+                      marginBottom: "0.25rem",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.4rem",
+                    }}>
+                      <span style={{
+                        display: "inline-block",
+                        width: "6px",
+                        height: "6px",
+                        backgroundColor: "var(--gold)",
+                        borderRadius: "50%",
+                      }} />
                       UFC CHAMPION
                     </div>
                   )}
-                  <div
-                    style={{
-                      fontFamily: FONT.display,
-                      fontWeight: 700,
-                      fontSize: "1.3rem",
-                      color: COLORS.bone,
-                      textTransform: "uppercase",
-                      lineHeight: 1.1,
-                    }}
-                  >
+
+                  <div style={{
+                    fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                    fontSize: "1.5rem",
+                    color: "var(--text)",
+                    letterSpacing: "0.02em",
+                    lineHeight: 1.05,
+                  }}>
                     {fighter.name}
                   </div>
+
                   {fighter.nickname && (
-                    <div
-                      style={{
-                        fontFamily: FONT.body,
-                        fontStyle: "italic",
-                        fontSize: "0.82rem",
-                        color: COLORS.slate,
-                      }}
-                    >
+                    <div style={{
+                      fontFamily: "var(--font-body)",
+                      fontStyle: "italic",
+                      fontSize: "0.8rem",
+                      color: "var(--muted)",
+                    }}>
                       &ldquo;{fighter.nickname}&rdquo;
                     </div>
                   )}
-                  <div
-                    style={{
-                      fontFamily: FONT.mono,
-                      fontSize: "0.7rem",
-                      color: COLORS.slate,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
+
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.65rem",
+                    color: "var(--muted)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                  }}>
                     {fighter.weightClass}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: FONT.mono,
-                      fontSize: "0.85rem",
-                      color: COLORS.red,
-                      fontWeight: 700,
-                      letterSpacing: "0.05em",
-                    }}
-                  >
+
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.9rem",
+                    color: fighter.isChampion ? "var(--gold)" : "var(--red)",
+                    fontWeight: 500,
+                    letterSpacing: "0.05em",
+                    marginTop: "0.25rem",
+                  }}>
                     {fighter.record}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: FONT.body,
-                      fontSize: "0.75rem",
-                      color: COLORS.slate,
-                      lineHeight: 1.5,
-                    }}
-                  >
+
+                  <div style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.78rem",
+                    color: "var(--muted)",
+                    lineHeight: 1.55,
+                    marginTop: "0.25rem",
+                  }}>
                     {fighter.fightingStyle}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: FONT.mono,
-                      fontSize: "0.65rem",
-                      color: fighter.isChampion ? COLORS.gold : COLORS.slate,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      marginTop: "0.5rem",
-                      opacity: 0.8,
-                    }}
-                  >
-                    Full profile --&gt;
+
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.62rem",
+                    color: fighter.isChampion ? "var(--gold)" : "var(--muted)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginTop: "0.75rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.3rem",
+                  }}>
+                    Full profile <span style={{ color: "var(--red)" }}>&rarr;</span>
                   </div>
                 </article>
               </Link>

@@ -3,22 +3,6 @@
 import Link from "next/link";
 import { posts } from "./blog/data";
 
-const COLORS = {
-  dark: "#080E18",
-  navy: "#0F1C2E",
-  navyLight: "#141F30",
-  red: "#D42B2B",
-  slate: "#4A5568",
-  bone: "#EEE8DC",
-  gold: "#E8A020",
-};
-
-const FONT = {
-  display: "'Oswald', sans-serif",
-  body: "'Merriweather', Georgia, serif",
-  mono: "'Roboto Mono', monospace",
-};
-
 const latestPosts = posts.slice(0, 3);
 
 const champions = [
@@ -26,61 +10,58 @@ const champions = [
     weightClass: "HEAVYWEIGHT",
     name: "Jon Jones",
     record: "27-1-0 (1 NC)",
-    style:
-      "The most decorated heavyweight in UFC history. Unmatched wrestling base and finishing instinct from every position.",
+    style: "The most decorated heavyweight in UFC history. Unmatched wrestling base and finishing instinct from every position.",
+    slug: "jon-jones",
   },
   {
     weightClass: "LIGHT HEAVYWEIGHT",
     name: "Alex Pereira",
     record: "12-2",
-    style:
-      "Four-weight kickboxing champion turned UFC destroyer. Knockout power in both hands. Finishes anyone on his best night.",
+    style: "Four-weight kickboxing champion turned UFC destroyer. Knockout power in both hands.",
+    slug: "alex-pereira",
   },
   {
     weightClass: "MIDDLEWEIGHT",
     name: "Dricus du Plessis",
     record: "22-2",
-    style:
-      "South African pressure and pure grit. Wrestling-based control with a finishing instinct that makes everyone uncomfortable.",
+    style: "South African pressure and pure grit. Wrestling-based control with a finishing instinct.",
+    slug: "dricus-du-plessis",
   },
   {
     weightClass: "WELTERWEIGHT",
     name: "Belal Muhammad",
     record: "23-3",
-    style:
-      "The marathon man. Relentless grappling pressure, elite conditioning, and a pace that breaks opponents across 25 minutes.",
+    style: "The marathon man. Relentless grappling pressure and elite conditioning across 25 minutes.",
+    slug: "belal-muhammad",
   },
 ];
 
-const chatMessages = [
-  "bro did you see that finish",
-  "judges robbed him again. two rounds clear",
-  "4am and i'm still watching the post-fight presser",
+const stats = [
+  { value: "20+", label: "Fighter Profiles" },
+  { value: "14", label: "In-Depth Posts" },
+  { value: "9", label: "Weight Classes Covered" },
+  { value: "10PM", label: "When the Card Starts" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* ============================================================
-          SECTION 1: HERO
-      ============================================================ */}
+      {/* ====== HERO ====== */}
       <section style={{
-        backgroundColor: COLORS.dark,
-        minHeight: "100vh",
+        backgroundColor: "var(--bg)",
+        minHeight: "calc(100vh - 64px)",
         display: "flex",
         flexDirection: "column",
         position: "relative",
         overflow: "hidden",
       }}>
-        {/* Red stripe -- fight card energy */}
+        {/* Top accent line */}
         <div style={{
-          height: "6px",
-          backgroundColor: COLORS.red,
+          height: "3px",
+          background: "linear-gradient(90deg, var(--red) 0%, transparent 100%)",
           width: "100%",
-          flexShrink: 0,
         }} />
 
-        {/* Hero content */}
         <div
           className="hero-content-wrap"
           style={{
@@ -91,23 +72,30 @@ export default function HomePage() {
             margin: "0 auto",
             padding: "5rem 1.5rem 4rem",
             width: "100%",
-            gap: "3rem",
+            gap: "4rem",
           }}
         >
-          {/* LEFT: 60% */}
-          <div
-            className="hero-left-panel"
-            style={{ flex: "0 0 58%" }}
-          >
-            {/* Label */}
+          {/* Left panel */}
+          <div className="hero-left-panel" style={{ flex: "0 0 58%" }}>
+            {/* Eyebrow */}
             <div style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.72rem",
-              color: COLORS.red,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.7rem",
+              color: "var(--red)",
               textTransform: "uppercase",
-              letterSpacing: "0.2em",
+              letterSpacing: "0.22em",
               marginBottom: "1.75rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.6rem",
             }}>
+              <span style={{
+                display: "inline-block",
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor: "var(--red)",
+              }} />
               POST-BEDTIME MMA COVERAGE
             </div>
 
@@ -115,74 +103,73 @@ export default function HomePage() {
             <div
               className="hero-headline"
               style={{
-                fontFamily: FONT.display,
-                fontWeight: 700,
-                fontSize: "clamp(64px, 10vw, 120px)",
-                lineHeight: 0.92,
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(72px, 11vw, 130px)",
+                lineHeight: 0.9,
                 marginBottom: "2rem",
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.01em",
               }}
             >
-              <div style={{ color: COLORS.bone }}>THE CARD</div>
-              <div style={{ color: COLORS.slate }}>STARTS AT</div>
-              <div style={{ color: COLORS.red }}>10PM.</div>
+              <div style={{ color: "var(--text)" }}>THE CARD</div>
+              <div style={{ color: "var(--muted)" }}>STARTS AT</div>
+              <div style={{ color: "var(--red)" }}>10PM.</div>
             </div>
 
             {/* Body */}
             <p style={{
-              fontFamily: FONT.body,
+              fontFamily: "var(--font-body)",
               fontSize: "1.05rem",
-              color: COLORS.slate,
+              color: "var(--muted)",
               lineHeight: 1.75,
               maxWidth: "480px",
               marginBottom: "2.5rem",
             }}>
-              Kids are in bed. Snacks are ready. The group chat is going. This is for the dads who know every record and watch every prelim.
+              Kids are in bed. Snacks are ready. The group chat is firing. This is MMA for the dads who know every record and watch every prelim.
             </p>
 
             {/* CTAs */}
-            <div
-              className="hero-cta-row"
-              style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
-            >
-              <Link href="/blog" style={{
-                fontFamily: FONT.display,
-                fontWeight: 700,
-                fontSize: "0.9rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                backgroundColor: COLORS.red,
-                color: COLORS.bone,
-                padding: "0.9rem 2rem",
+            <div className="hero-cta-row" style={{ display: "flex", gap: "1rem" }}>
+              <Link href="/fighters" style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
+                backgroundColor: "var(--red)",
+                color: "var(--text)",
+                padding: "0.85rem 2rem",
                 textDecoration: "none",
-                display: "inline-block",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                minHeight: "44px",
               }}>
-                TONIGHT'S CARD
+                BROWSE FIGHTERS
               </Link>
               <Link href="/blog" style={{
-                fontFamily: FONT.display,
-                fontWeight: 700,
-                fontSize: "0.9rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
                 backgroundColor: "transparent",
-                color: COLORS.bone,
-                border: `2px solid ${COLORS.bone}`,
-                padding: "0.9rem 2rem",
+                color: "var(--text)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                padding: "0.85rem 2rem",
                 textDecoration: "none",
-                display: "inline-block",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                minHeight: "44px",
               }}>
-                THE BLOG
+                READ THE BLOG
               </Link>
             </div>
           </div>
 
-          {/* RIGHT: 40% -- Fight Card Panel */}
+          {/* Right panel — next event callout */}
           <div
             className="hero-right-panel"
             style={{
-              flex: "0 0 38%",
-              backgroundColor: COLORS.navyLight,
+              flex: "0 0 36%",
+              backgroundColor: "var(--surface)",
+              border: "1px solid var(--border)",
               padding: "2rem",
               alignSelf: "stretch",
               display: "flex",
@@ -190,119 +177,411 @@ export default function HomePage() {
               justifyContent: "center",
             }}
           >
-            {/* "TONIGHT" label */}
             <div style={{
-              fontFamily: FONT.display,
-              fontWeight: 700,
-              fontSize: "0.8rem",
-              color: COLORS.red,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.65rem",
+              color: "var(--red)",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               marginBottom: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
             }}>
-              TONIGHT
+              <span style={{
+                width: "6px",
+                height: "6px",
+                borderRadius: "50%",
+                backgroundColor: "var(--red)",
+                display: "inline-block",
+                animation: "pulse 2s infinite",
+              }} />
+              FIGHT CARD
             </div>
 
-            {/* Fight card entries */}
             {[
-              { event: "MAIN EVENT", weightClass: "HEAVYWEIGHT" },
-              { event: "CO-MAIN EVENT", weightClass: "LIGHT HEAVYWEIGHT" },
-              { event: "PRELIMS", weightClass: "MULTIPLE BOUTS" },
-            ].map(({ event, weightClass }, i) => (
-              <div key={event}>
+              { slot: "MAIN EVENT", weight: "HEAVYWEIGHT", bout: "TBD vs TBD" },
+              { slot: "CO-MAIN EVENT", weight: "LIGHT HEAVYWEIGHT", bout: "TBD vs TBD" },
+              { slot: "PRELIMS", weight: "MULTIPLE BOUTS", bout: "TBD vs TBD" },
+            ].map(({ slot, weight, bout }, i) => (
+              <div key={slot}>
                 <div style={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "flex-start",
-                  paddingTop: i === 0 ? 0 : "1.25rem",
-                  paddingBottom: "1.25rem",
+                  padding: `${i === 0 ? "0" : "1.25rem"} 0 1.25rem`,
                 }}>
-                  {/* Left: event type + weight class */}
                   <div>
                     <div style={{
-                      fontFamily: FONT.mono,
-                      fontSize: "0.65rem",
-                      color: COLORS.slate,
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.6rem",
+                      color: "var(--muted)",
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
                       marginBottom: "0.3rem",
                     }}>
-                      {weightClass}
+                      {weight}
                     </div>
                     <div style={{
-                      fontFamily: FONT.display,
-                      fontWeight: 500,
-                      fontSize: "0.8rem",
-                      color: COLORS.slate,
-                      letterSpacing: "0.08em",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.7rem",
+                      color: "var(--muted)",
                       textTransform: "uppercase",
+                      letterSpacing: "0.06em",
                     }}>
-                      {event}
+                      {slot}
                     </div>
                   </div>
-                  {/* Right: fighters */}
                   <div style={{
-                    fontFamily: FONT.display,
-                    fontWeight: 700,
+                    fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
                     fontSize: "1rem",
-                    color: COLORS.bone,
+                    color: "var(--text)",
                     textAlign: "right",
-                    letterSpacing: "0.02em",
+                    letterSpacing: "0.03em",
                   }}>
-                    TBD vs TBD
+                    {bout}
                   </div>
                 </div>
-                {/* Separator -- not after last item */}
-                {i < 2 && (
-                  <div style={{
-                    height: "1px",
-                    backgroundColor: `${COLORS.bone}22`,
-                    width: "100%",
-                  }} />
-                )}
+                {i < 2 && <div style={{ height: "1px", backgroundColor: "var(--border)" }} />}
               </div>
             ))}
 
-            {/* Full card link */}
-            <div style={{ marginTop: "1.75rem" }}>
-              <Link href="/blog" style={{
-                fontFamily: FONT.mono,
-                fontSize: "0.72rem",
-                color: COLORS.bone,
+            <div style={{ marginTop: "2rem" }}>
+              <Link href="/events" style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.7rem",
+                color: "var(--muted)",
                 textDecoration: "none",
                 letterSpacing: "0.06em",
-                opacity: 0.7,
+                display: "flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                minHeight: "44px",
               }}>
-                Full card breakdown --&gt;
+                Full event schedule
+                <span style={{ color: "var(--red)" }}>&rarr;</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 2: THE DAD TEST
-      ============================================================ */}
+      {/* ====== STATS ====== */}
       <section style={{
-        backgroundColor: COLORS.bone,
+        backgroundColor: "var(--surface)",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
+        padding: "3rem 1.5rem",
+      }}>
+        <div style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "2rem",
+        }}>
+          {stats.map(({ value, label }) => (
+            <div key={label} style={{ textAlign: "center" }}>
+              <div style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                color: "var(--text)",
+                lineHeight: 1,
+                marginBottom: "0.4rem",
+                letterSpacing: "0.02em",
+              }}>
+                {value}
+              </div>
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                color: "var(--muted)",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+              }}>
+                {label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ====== CURRENT CHAMPIONS ====== */}
+      <section style={{
+        backgroundColor: "var(--bg)",
+        padding: "6rem 1.5rem",
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            marginBottom: "2.5rem",
+            flexWrap: "wrap",
+            gap: "1rem",
+          }}>
+            <div>
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                color: "var(--gold)",
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                marginBottom: "0.5rem",
+              }}>
+                AS OF EARLY 2026
+              </div>
+              <div style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                color: "var(--text)",
+                letterSpacing: "0.03em",
+                lineHeight: 1,
+              }}>
+                CURRENT CHAMPIONS
+              </div>
+            </div>
+            <Link href="/fighters" style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.7rem",
+              color: "var(--muted)",
+              textDecoration: "none",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.35rem",
+              minHeight: "44px",
+            }}>
+              All fighters <span style={{ color: "var(--red)" }}>&rarr;</span>
+            </Link>
+          </div>
+
+          <div className="champion-grid">
+            {champions.map((c) => (
+              <Link key={c.weightClass} href={`/fighters/${c.slug}`} style={{ textDecoration: "none" }}>
+                <div style={{
+                  backgroundColor: "var(--surface)",
+                  borderTop: "2px solid var(--gold)",
+                  padding: "1.75rem 1.5rem",
+                  height: "100%",
+                  cursor: "pointer",
+                  transition: "background-color 0.15s",
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--surface-elevated)")}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--surface)")}
+                >
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.58rem",
+                    color: "var(--gold)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    marginBottom: "0.85rem",
+                  }}>
+                    UFC CHAMPION — {c.weightClass}
+                  </div>
+                  <div style={{
+                    fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                    fontSize: "1.5rem",
+                    color: "var(--text)",
+                    lineHeight: 1.05,
+                    marginBottom: "0.5rem",
+                    letterSpacing: "0.03em",
+                  }}>
+                    {c.name}
+                  </div>
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.82rem",
+                    color: "var(--red)",
+                    marginBottom: "0.85rem",
+                    letterSpacing: "0.04em",
+                    fontWeight: 500,
+                  }}>
+                    {c.record}
+                  </div>
+                  <p style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.82rem",
+                    color: "var(--muted)",
+                    lineHeight: 1.65,
+                    margin: 0,
+                  }}>
+                    {c.style}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== LATEST BLOG POSTS ====== */}
+      <section style={{
+        backgroundColor: "var(--surface)",
+        borderTop: "1px solid var(--border)",
+        padding: "6rem 1.5rem",
+      }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            marginBottom: "2.5rem",
+            flexWrap: "wrap",
+            gap: "1rem",
+          }}>
+            <div>
+              <div style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                color: "var(--red)",
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                marginBottom: "0.5rem",
+              }}>
+                LATEST FROM THE SITE
+              </div>
+              <div style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                color: "var(--text)",
+                letterSpacing: "0.03em",
+                lineHeight: 1,
+              }}>
+                THE BREAKDOWN
+              </div>
+            </div>
+            <Link href="/blog" style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.7rem",
+              color: "var(--muted)",
+              textDecoration: "none",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.35rem",
+              minHeight: "44px",
+            }}>
+              All posts <span style={{ color: "var(--red)" }}>&rarr;</span>
+            </Link>
+          </div>
+
+          <div className="blog-preview-grid">
+            {latestPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
+                <article style={{
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  borderTop: "2px solid var(--red)",
+                  padding: "1.75rem",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  cursor: "pointer",
+                  transition: "border-color 0.15s, background-color 0.15s",
+                }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "var(--surface-elevated)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(239,68,68,0.5)";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+                  }}
+                >
+                  <div style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.62rem",
+                    color: "var(--red)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    marginBottom: "0.85rem",
+                  }}>
+                    {post.category}
+                  </div>
+                  <div style={{
+                    fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                    fontSize: "1.25rem",
+                    color: "var(--text)",
+                    lineHeight: 1.15,
+                    marginBottom: "0.85rem",
+                    letterSpacing: "0.02em",
+                  }}>
+                    {post.title}
+                  </div>
+                  <p style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.875rem",
+                    color: "var(--muted)",
+                    lineHeight: 1.7,
+                    flexGrow: 1,
+                    marginBottom: "1.25rem",
+                  }}>
+                    {post.excerpt}
+                  </p>
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid var(--border)",
+                    paddingTop: "0.85rem",
+                  }}>
+                    <div style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.65rem",
+                      color: "var(--muted)",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.06em",
+                    }}>
+                      {post.date}
+                    </div>
+                    <div style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.65rem",
+                      color: "var(--red)",
+                      letterSpacing: "0.04em",
+                    }}>
+                      Read &rarr;
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====== DAD TEST ====== */}
+      <section style={{
+        backgroundColor: "var(--bg)",
+        borderTop: "1px solid var(--border)",
         padding: "6rem 1.5rem",
       }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          {/* Headline */}
           <div style={{
-            fontFamily: FONT.display,
-            fontWeight: 700,
-            fontSize: "clamp(36px, 6vw, 72px)",
-            color: COLORS.dark,
-            lineHeight: 0.95,
-            letterSpacing: "-0.01em",
-            marginBottom: "3rem",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            color: "var(--red)",
             textTransform: "uppercase",
+            letterSpacing: "0.18em",
+            marginBottom: "1rem",
           }}>
-            DO YOU PASS<br />THE DAD TEST?
+            ARE YOU ONE OF US?
+          </div>
+          <div style={{
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "clamp(2.5rem, 6vw, 5rem)",
+            color: "var(--text)",
+            lineHeight: 0.92,
+            letterSpacing: "0.02em",
+            marginBottom: "3rem",
+          }}>
+            THE DAD TEST
           </div>
 
-          {/* Checklist */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginBottom: "3rem" }}>
             {[
               "You know Khabib's record off the top of your head",
@@ -315,32 +594,34 @@ export default function HomePage() {
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "1rem",
+                padding: "1rem 1.25rem",
+                backgroundColor: "var(--surface)",
+                border: "1px solid var(--border)",
               }}>
-                {/* Square checkbox */}
                 <div style={{
-                  width: "22px",
-                  height: "22px",
-                  minWidth: "22px",
-                  backgroundColor: COLORS.red,
+                  width: "20px",
+                  height: "20px",
+                  minWidth: "20px",
+                  backgroundColor: "var(--red)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginTop: "2px",
+                  marginTop: "1px",
                 }}>
                   <span style={{
-                    color: COLORS.bone,
-                    fontSize: "13px",
+                    color: "var(--text)",
+                    fontSize: "12px",
                     fontWeight: 700,
+                    fontFamily: "var(--font-mono)",
                     lineHeight: 1,
-                    fontFamily: FONT.mono,
                   }}>
                     X
                   </span>
                 </div>
                 <span style={{
-                  fontFamily: FONT.body,
-                  fontSize: "1rem",
-                  color: COLORS.dark,
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                  color: "var(--text)",
                   lineHeight: 1.5,
                 }}>
                   {item}
@@ -349,341 +630,124 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Closing */}
           <div style={{
-            borderTop: `3px solid ${COLORS.dark}`,
-            paddingTop: "2rem",
-          }}>
-            <div style={{
-              fontFamily: FONT.display,
-              fontWeight: 700,
-              fontSize: "clamp(28px, 4vw, 48px)",
-              color: COLORS.dark,
-              textTransform: "uppercase",
-              letterSpacing: "0.02em",
-              marginBottom: "0.75rem",
-            }}>
-              YOU BELONG HERE.
-            </div>
-            <p style={{
-              fontFamily: FONT.body,
-              fontSize: "1rem",
-              color: COLORS.slate,
-              lineHeight: 1.7,
-              maxWidth: "500px",
-            }}>
-              mmadads.com covers MMA the way you watch it. Seriously.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          SECTION 3: FIGHTER STATS -- CURRENT CHAMPIONS
-      ============================================================ */}
-      <section style={{
-        backgroundColor: COLORS.dark,
-        padding: "6rem 1.5rem",
-        borderTop: `1px solid ${COLORS.navy}`,
-      }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          {/* Header */}
-          <div style={{ marginBottom: "3rem" }}>
-            <div style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.7rem",
-              color: COLORS.red,
-              textTransform: "uppercase",
-              letterSpacing: "0.2em",
-              marginBottom: "0.75rem",
-            }}>
-              AS OF EARLY 2026
-            </div>
-            <div style={{
-              fontFamily: FONT.display,
-              fontWeight: 700,
-              fontSize: "clamp(28px, 4vw, 48px)",
-              color: COLORS.bone,
-              textTransform: "uppercase",
-              letterSpacing: "0.02em",
-            }}>
-              CURRENT CHAMPIONS
-            </div>
-          </div>
-
-          {/* Grid */}
-          <div
-            className="champion-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "1.5rem",
-            }}
-          >
-            {champions.map((c) => (
-              <div key={c.weightClass} style={{
-                backgroundColor: COLORS.navy,
-                borderLeft: `4px solid ${COLORS.gold}`,
-                padding: "1.75rem 1.5rem",
-              }}>
-                {/* Weight class */}
-                <div style={{
-                  fontFamily: FONT.mono,
-                  fontSize: "0.62rem",
-                  color: COLORS.slate,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.12em",
-                  marginBottom: "0.75rem",
-                }}>
-                  {c.weightClass}
-                </div>
-                {/* Name */}
-                <div style={{
-                  fontFamily: FONT.display,
-                  fontWeight: 700,
-                  fontSize: "1.4rem",
-                  color: COLORS.bone,
-                  lineHeight: 1.1,
-                  marginBottom: "0.5rem",
-                  textTransform: "uppercase",
-                }}>
-                  {c.name}
-                </div>
-                {/* Record */}
-                <div style={{
-                  fontFamily: FONT.mono,
-                  fontSize: "0.8rem",
-                  color: COLORS.red,
-                  marginBottom: "0.75rem",
-                  letterSpacing: "0.04em",
-                }}>
-                  {c.record}
-                </div>
-                {/* Style note */}
-                <div style={{
-                  fontFamily: FONT.body,
-                  fontSize: "0.82rem",
-                  color: COLORS.slate,
-                  lineHeight: 1.65,
-                }}>
-                  {c.style}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          SECTION 4: BLOG PREVIEW
-      ============================================================ */}
-      <section style={{
-        backgroundColor: COLORS.navy,
-        padding: "6rem 1.5rem",
-      }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          {/* Header */}
-          <div style={{
+            borderTop: "1px solid var(--border)",
+            paddingTop: "2.5rem",
             display: "flex",
+            alignItems: "flex-start",
             justifyContent: "space-between",
-            alignItems: "flex-end",
-            marginBottom: "3rem",
             flexWrap: "wrap",
-            gap: "1rem",
+            gap: "1.5rem",
           }}>
             <div>
               <div style={{
-                fontFamily: FONT.mono,
-                fontSize: "0.7rem",
-                color: COLORS.red,
-                textTransform: "uppercase",
-                letterSpacing: "0.2em",
-                marginBottom: "0.5rem",
-              }}>
-                LATEST FROM THE SITE
-              </div>
-              <div style={{
-                fontFamily: FONT.display,
-                fontWeight: 700,
-                fontSize: "clamp(28px, 4vw, 44px)",
-                color: COLORS.bone,
-                textTransform: "uppercase",
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                color: "var(--text)",
                 letterSpacing: "0.02em",
+                marginBottom: "0.5rem",
+                lineHeight: 1,
               }}>
-                THE BREAKDOWN
+                YOU BELONG HERE.
               </div>
+              <p style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.95rem",
+                color: "var(--muted)",
+                lineHeight: 1.7,
+                maxWidth: "420px",
+              }}>
+                mmadads.com covers MMA the way you watch it. Seriously, with depth.
+              </p>
             </div>
-            <Link href="/blog" style={{
-              fontFamily: FONT.mono,
-              fontSize: "0.75rem",
-              color: COLORS.bone,
-              textDecoration: "none",
+            <Link href="/fighters" style={{
+              fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+              fontSize: "1.1rem",
               letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              opacity: 0.6,
-              paddingBottom: "0.25rem",
-              borderBottom: `1px solid ${COLORS.slate}`,
+              backgroundColor: "var(--red)",
+              color: "var(--text)",
+              padding: "0.85rem 2rem",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              minHeight: "44px",
+              alignSelf: "center",
             }}>
-              ALL POSTS --&gt;
+              EXPLORE THE SITE
             </Link>
-          </div>
-
-          {/* Post cards */}
-          <div
-            className="blog-preview-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "1.5rem",
-            }}
-          >
-            {latestPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
-                <article style={{
-                  backgroundColor: COLORS.navyLight,
-                  borderTop: `3px solid ${COLORS.red}`,
-                  padding: "1.75rem",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  cursor: "pointer",
-                }}>
-                  {/* Category */}
-                  <div style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.62rem",
-                    color: COLORS.slate,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.12em",
-                    marginBottom: "0.85rem",
-                  }}>
-                    {post.category}
-                  </div>
-                  {/* Title */}
-                  <div style={{
-                    fontFamily: FONT.display,
-                    fontWeight: 700,
-                    fontSize: "1.15rem",
-                    color: COLORS.bone,
-                    lineHeight: 1.25,
-                    marginBottom: "0.85rem",
-                    textTransform: "uppercase",
-                  }}>
-                    {post.title}
-                  </div>
-                  {/* Excerpt */}
-                  <p style={{
-                    fontFamily: FONT.body,
-                    fontSize: "0.85rem",
-                    color: COLORS.slate,
-                    lineHeight: 1.7,
-                    flexGrow: 1,
-                    marginBottom: "1.25rem",
-                  }}>
-                    {post.excerpt}
-                  </p>
-                  {/* Date */}
-                  <div style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.68rem",
-                    color: COLORS.slate,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    opacity: 0.7,
-                  }}>
-                    {post.date}
-                  </div>
-                </article>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 5: THE GROUP CHAT
-      ============================================================ */}
+      {/* ====== NEWSLETTER ====== */}
       <section style={{
-        backgroundColor: COLORS.navy,
-        borderTop: `1px solid ${COLORS.dark}`,
-        padding: "6rem 1.5rem",
+        backgroundColor: "var(--surface)",
+        borderTop: "1px solid var(--border)",
+        padding: "5rem 1.5rem",
       }}>
-        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
-          {/* Headline */}
+        <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
           <div style={{
-            fontFamily: FONT.display,
-            fontWeight: 700,
-            fontSize: "clamp(28px, 5vw, 56px)",
-            color: COLORS.bone,
-            textTransform: "uppercase",
-            letterSpacing: "0.01em",
-            lineHeight: 1.05,
-            marginBottom: "3rem",
-            textAlign: "center",
+            fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+            fontSize: "clamp(1.75rem, 4vw, 3rem)",
+            color: "var(--text)",
+            letterSpacing: "0.03em",
+            marginBottom: "0.75rem",
+            lineHeight: 1,
           }}>
-            THE GROUP CHAT<br />NEVER SLEEPS
+            FIGHT NIGHT NOTES
           </div>
-
-          {/* Chat bubbles */}
-          <div style={{
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "0.95rem",
+            color: "var(--muted)",
+            lineHeight: 1.7,
+            marginBottom: "2rem",
+          }}>
+            Post-fight breakdowns, fighter profiles, and dad-approved takes. No spam. Just MMA.
+          </p>
+          <form style={{
             display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            marginBottom: "3rem",
-          }}>
-            {chatMessages.map((msg, i) => (
-              <div key={i} style={{
-                display: "flex",
-                justifyContent: i % 2 === 0 ? "flex-start" : "flex-end",
-              }}>
-                <div style={{
-                  backgroundColor: i % 2 === 0 ? "#1C2C45" : "#233352",
-                  borderRadius: i % 2 === 0
-                    ? "0 16px 16px 16px"
-                    : "16px 0 16px 16px",
-                  padding: "0.85rem 1.2rem",
-                  maxWidth: "70%",
-                }}>
-                  <span style={{
-                    fontFamily: FONT.mono,
-                    fontSize: "0.82rem",
-                    color: COLORS.bone,
-                    lineHeight: 1.5,
-                    opacity: 0.9,
-                  }}>
-                    {msg}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Body + CTA */}
-          <div style={{ textAlign: "center" }}>
-            <p style={{
-              fontFamily: FONT.body,
-              fontSize: "0.95rem",
-              color: COLORS.slate,
-              lineHeight: 1.75,
-              marginBottom: "2rem",
-            }}>
-              This site is for those conversations. MMA coverage from dads who actually watch.
-            </p>
-            <Link href="/blog" style={{
-              fontFamily: FONT.display,
-              fontWeight: 700,
-              fontSize: "0.9rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              backgroundColor: COLORS.red,
-              color: COLORS.bone,
-              padding: "0.9rem 2rem",
-              textDecoration: "none",
-              display: "inline-block",
-            }}>
-              READ THE BLOG
-            </Link>
-          </div>
+            gap: "0",
+            maxWidth: "480px",
+            margin: "0 auto",
+          }}
+            onSubmit={e => e.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="your@email.com"
+              style={{
+                flex: 1,
+                padding: "0.85rem 1.25rem",
+                backgroundColor: "var(--bg)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                borderRight: "none",
+                color: "var(--text)",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.9rem",
+                outline: "none",
+                minHeight: "44px",
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
+                fontSize: "1rem",
+                letterSpacing: "0.08em",
+                backgroundColor: "var(--red)",
+                color: "var(--text)",
+                border: "none",
+                padding: "0.85rem 1.5rem",
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+                minHeight: "44px",
+              }}
+            >
+              SUBSCRIBE
+            </button>
+          </form>
         </div>
       </section>
     </>
