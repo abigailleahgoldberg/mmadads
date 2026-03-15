@@ -51,9 +51,19 @@ const FOOTER_SECTIONS = [
     heading: "NETWORK",
     links: [
       { label: "UFC.com", href: "https://www.ufc.com" },
-      { label: "UFC Fight Pass", href: "https://ufcfightpass.com" },
+      { label: "MMAMoms.com", href: "https://mmamoms.com" },
       { label: "ESPN MMA", href: "https://www.espn.com/mma/" },
       { label: "Tapology", href: "https://www.tapology.com" },
+    ],
+  },
+  {
+    heading: "OUR NETWORK",
+    links: [
+      { label: "MMAMoms.com", href: "https://mmamoms.com" },
+      { label: "TheVoiceOfCash.com", href: "https://thevoiceofcash.com" },
+      { label: "WeBearish.com", href: "https://webearish.com" },
+      { label: "AISkillsAgents.com", href: "https://aiskillsagents.com" },
+      { label: "Full Network →", href: "https://thevoiceofcash.com/network" },
     ],
   },
   {
