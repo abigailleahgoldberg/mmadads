@@ -70,10 +70,14 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
-    heading: "SITE",
+    heading: "LEGAL",
     links: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
+      { label: "Disclaimer", href: "/disclaimer" },
+      { label: "Affiliate Disclosure", href: "/affiliate-disclosure" },
+      { label: "DMCA", href: "/dmca" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ];
