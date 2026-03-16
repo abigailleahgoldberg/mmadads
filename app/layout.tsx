@@ -204,6 +204,12 @@ export default function RootLayout({
                 Affiliate links may earn a commission.
               </div>
             </div>
+            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "center", paddingTop: "1.25rem", borderTop: "1px solid var(--border)", marginTop: "0.75rem" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", fontWeight: 700, color: "var(--red)", letterSpacing: "0.12em", textTransform: "uppercase" as const }}>MMA Resources</span>
+              <a href="https://www.ufc.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--muted)", textDecoration: "none" }}>UFC.com — Official MMA →</a>
+              <a href="https://www.espn.com/mma/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--muted)", textDecoration: "none" }}>ESPN MMA →</a>
+              <a href="https://abcboxing.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", color: "var(--muted)", textDecoration: "none" }}>ABC — Association of Boxing Commissions →</a>
+            </div>
           </div>
         </footer>
       </body>
