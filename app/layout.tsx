@@ -30,9 +30,15 @@ export const metadata: Metadata = {
     siteName: "MMADADS.COM",
     type: "website",
     locale: "en_US",
+    title: "MMADADS.COM | Post-Bedtime MMA Coverage",
+    description: "The card starts at 10pm. Kids are in bed. This is MMA coverage for dads who know every record and watch every prelim.",
+    url: "https://mmadads.com",
+    images: [{ url: "https://mmadads.com/favicon.svg", width: 64, height: 64, alt: "MMADADS.COM" }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
+    title: "MMADADS.COM | Post-Bedtime MMA Coverage",
+    description: "MMA coverage for dads who know every record and watch every prelim.",
   },
   alternates: {
     canonical: 'https://mmadads.com',
