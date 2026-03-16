@@ -86,6 +86,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="/site.webmanifest" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
