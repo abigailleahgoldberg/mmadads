@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  alternates: {
+    canonical: 'https://mmadads.com',
+  },
 };
 
 const FOOTER_SECTIONS = [
@@ -82,6 +85,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "MMADADS.COM",
+          "url": "https://mmadads.com",
+          "description": "Post-bedtime MMA coverage for dads who know every record and watch every prelim."
+        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "MMADADS.COM",
+          "url": "https://mmadads.com"
+        }) }} />
+      </head>
       <body>
         <NetworkBar />
         <Nav />

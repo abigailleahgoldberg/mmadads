@@ -100,7 +100,7 @@ export default function HomePage() {
             </div>
 
             {/* Headline */}
-            <div
+            <h1
               className="hero-headline"
               style={{
                 fontFamily: "var(--font-display, 'Bebas Neue', sans-serif)",
@@ -110,10 +110,10 @@ export default function HomePage() {
                 letterSpacing: "0.01em",
               }}
             >
-              <div style={{ color: "var(--text)" }}>THE CARD</div>
-              <div style={{ color: "var(--muted)" }}>STARTS AT</div>
-              <div style={{ color: "var(--red)" }}>10PM.</div>
-            </div>
+              <span style={{ display: "block", color: "var(--text)" }}>THE CARD</span>
+              <span style={{ display: "block", color: "var(--muted)" }}>STARTS AT</span>
+              <span style={{ display: "block", color: "var(--red)" }}>10PM.</span>
+            </h1>
 
             {/* Body */}
             <p style={{
