@@ -1656,4 +1656,176 @@ Every black belt started as a clueless white belt who felt dumb on their first d
 *Your local BJJ school almost certainly offers a free trial class. Go. The worst that happens is you learn something.*
 `,
   },
+  {
+    slug: "10-greatest-ufc-title-defenses-all-time",
+    title: "The 10 Greatest UFC Title Defenses of All Time, Ranked",
+    excerpt: "Not just winning the belt — keeping it. These are the performances that defined what championship fighting looks like.",
+    category: "UFC History",
+    date: "March 17, 2026",
+    content: `Winning a UFC title is hard. Defending it is a different animal entirely. The champion now has film, the challenger has nothing to lose, and the pressure of expectation sits entirely on one side of the cage.
+
+These ten defenses stand above everything else in the sport's history.
+
+**10. Anderson Silva vs. Chael Sonnen II (UFC 148)**
+Sonnen nearly took the title in the first fight. The rematch was the most anticipated in middleweight history. Silva stopped him in the second round with a front kick that belonged in a highlight reel, not a title fight. Dominance reclaimed.
+
+**9. Valentina Shevchenko vs. Jessica Andrade (UFC 261)**
+The Bullet has been defending the flyweight title so consistently that her defenses blur together. This one stands out: Andrade came in as the most dangerous challenger she'd faced, and Shevchenko took her apart with surgical precision over five rounds.
+
+**8. Jon Jones vs. Alexander Gustafsson I (UFC 165)**
+Jones wasn't supposed to be tested. Gustafsson nearly took the title. What Jones showed in those five rounds — the ability to get hurt, get rocked, and still find a way to win — revealed a champion the sport had never seen.
+
+**7. Khabib Nurmagomedov vs. Conor McGregor (UFC 229)**
+The chaos surrounding this fight almost overshadows the performance. Khabib controlled McGregor from round one, imposed his will completely, and submitted him in the fourth. The post-fight melee was unfortunate. The fighting was historic.
+
+**6. Georges St-Pierre vs. BJ Penn II (UFC 94)**
+GSP was dominant against everyone. Against Penn, he was otherworldly. He bloodied Penn, dominated every round, and forced the corner to stop the fight after the fourth. Penn, one of the most dangerous fighters in the sport, had no answers.
+
+**5. Stipe Miocic vs. Daniel Cormier III (UFC 252)**
+Stipe had already beaten DC twice. The third fight was the rubber match everyone needed. Stipe controlled pace, landed cleaner shots, and defended takedowns that would have ended most fighters. The most complete performance of his legendary career.
+
+**4. Jon Jones vs. Daniel Cormier I (UFC 182)**
+These two have fought twice and the debates will continue forever. The first fight was Jones at his most complete: distance management, diverse striking, wrestling, clinch control. Cormier is a legitimate all-time great and Jones handled him across five rounds.
+
+**3. Royce Gracie vs. The Field (UFC 1-3)**
+Not a single defense — a dynasty established across three early tournaments. Gracie introduced the world to jiu-jitsu and submitted men much larger than him on the way to multiple tournament wins. Without these performances, the sport doesn't exist.
+
+**2. Anderson Silva vs. Forrest Griffin (UFC 101)**
+More entertaining than it had any right to be. Silva dodged Griffin's punches like he was playing a video game on easy mode, then landed a perfectly timed counter that dropped Griffin and ended the fight. The embodiment of striking mastery.
+
+**1. Anderson Silva's Middleweight Reign (UFC 77-148)**
+Ten consecutive defenses. Seven by finish. Opponents like Henderson, Sonnen, Belfort, Forrest, Marquardt, Okami. No middleweight champion has come close to replicating this sustained dominance. The standard by which all title reigns are measured.
+
+The next name on this list? Watch Leon Edwards, Shevchenko, and whoever emerges from the heavyweight chaos. The sport keeps producing greatness.`,
+  },
+  {
+    slug: "watching-mma-with-kids-age-appropriate-guide",
+    title: "How to Watch MMA With Your Kids: An Age-Appropriate Guide",
+    excerpt: "You love the sport. Your kids are curious. Here's how to share it in a way that makes sense for their age.",
+    category: "Dads & Family",
+    date: "March 17, 2026",
+    content: `My kid asked me what I was watching. I was mid-rewatch of Jones vs Cormier 2 and had to make a quick decision: change the channel or explain what was happening.
+
+I explained. And it turned into one of the better conversations I've had with my kid about discipline, preparation, and what it takes to compete at the highest level of anything.
+
+MMA, watched the right way, is more educational than most of what's on TV. Here's how to approach it by age.
+
+**Ages 5-7: Stick to Wrestling**
+Combat sports at this age means wrestling or judo — sports where the goal is clearly non-violent. Explain that the people are athletes who train very hard to be the best at their skill. Avoid the knockout reels. Focus on the technique and the competition.
+
+If they watch UFC with you, explain it as "athletes competing" and skip anything too graphic. Kids at this age process things literally — they don't need to see a TKO finish.
+
+**Ages 8-11: Introduce the Rules**
+This is the right age to actually explain how the sport works. The scoring system, why certain techniques are more valuable, what submission means, why a fighter taps. When they understand the rules, the violence has context — it's not random, it's strategic.
+
+Talk about the training. The years of dedication. The weight cuts and sacrifice. Kids this age are starting to learn about work ethic. MMA fighters are extreme examples of it.
+
+**Ages 12+: Full Engagement**
+Teenagers can handle the full sport. More importantly, they can handle real conversations about what they're watching. Discuss: what makes a great game plan? How does a fighter manage getting hurt? What is the difference between confidence and arrogance?
+
+The mental aspects of fighting — visualization, fear management, performing under pressure — translate directly to any competitive endeavor. Sports, academics, performance. The lessons are universal.
+
+**What to Avoid at Any Age**
+Excessive replays of brutal finishes. Commentary that glorifies the damage. Betting discussions. The sport sells itself on skill and competition — keep the focus there.
+
+MMA is one of the few sports where you can watch someone execute a perfect technique and immediately understand why it works. That clarity is its own kind of education.`,
+  },
+  {
+    slug: "science-of-the-knockout-brain",
+    title: "The Science of the KO: What Actually Happens to Your Brain When You Get Knocked Out",
+    excerpt: "The bright light, the legs giving out, the confusion after. Here's the neuroscience of a knockout and why it matters.",
+    category: "Fight Science",
+    date: "March 17, 2026",
+    content: `Watch enough knockouts and you start to notice the patterns. The legs go first — not from weakness, from disruption of the motor cortex. The hands drop. Sometimes the fighter takes a step before falling. The brain is still trying to run the program. The program has already crashed.
+
+Here's what's actually happening.
+
+**The Mechanics of a KO**
+A knockout is the brain's emergency shutdown in response to rotational acceleration. A straight punch creates linear force. What knocks people out is rotational force — the head spinning on the neck axis, which causes the brain to rotate inside the skull.
+
+The brainstem, which controls consciousness, connects to the cerebral cortex. When the brain rotates faster than the brainstem can follow, the connection is temporarily disrupted. The lights go out.
+
+This is why a smaller punch with better timing can drop a bigger man. Leverage and rotation matter more than raw force.
+
+**The Stiffening Response**
+The classic "stiff" knockout — arms extended, body rigid — is a decerebrate posturing reflex. The cerebral cortex (conscious brain) goes offline. The brainstem and spinal cord briefly take over, triggering involuntary muscle contraction. It's not a choice. It's the nervous system in failsafe mode.
+
+**The Recovery Window**
+Most knockouts result in 5-30 seconds of unconsciousness. The brain restores function quickly because the disruption is usually temporary — a circuit interruption, not circuit damage. What it leaves behind is the concerning part: the metabolic cascade triggered by the trauma, and the cumulative effects of repeated disruption over a career.
+
+**Why This Matters**
+The sport takes this seriously now in ways it didn't 20 years ago. Same-day return to competition after a KO loss is gone. Concussion protocols exist. Neurological testing before major fights. The science drove the change.
+
+Understanding what a knockout actually is — a neurological event, not just getting hit hard — changes how you watch the sport. The competitor who gets knocked out didn't fail. Their brain executed an emergency protocol. They'll be back.
+
+The ones we should worry about are the ones who take repeated shots to the head for three rounds without going down. That's often more damaging than the clean knockout. The brain that never fully crashes keeps taking hits while already compromised.
+
+Watch the sport with this knowledge and you'll see it differently.`,
+  },
+  {
+    slug: "goat-debate-jones-khabib-silva",
+    title: "The GOAT Debate: Why Jones, Khabib, and Anderson Silva All Have a Case",
+    excerpt: "There is no consensus answer and there shouldn't be. Here's the honest argument for each one.",
+    category: "UFC History",
+    date: "March 17, 2026",
+    content: `Every sport has a GOAT debate. MMA has one that will never end, for reasons that are actually worth understanding.
+
+The three most common answers are Jon Jones, Khabib Nurmagomedov, and Anderson Silva. All three cases are legitimate. Here's why.
+
+**The Case for Anderson Silva**
+Longevity and dominance. Ten consecutive middleweight title defenses. Seven finishes. A run from 2006 to 2012 where he was so far ahead of the competition it looked unfair. His striking was a generation ahead of anything the sport had seen.
+
+The counter: his later career losses, a failed drug test, and the fact that he competed at a weight class he was naturally large for. But the peak? Nobody touched it.
+
+**The Case for Jon Jones**
+The most complete fighter the sport has ever produced. Technically superior to everyone he's faced. Wrestling, striking, clinch, submissions — elite in every area. His physical gifts are extraordinary, but the technique is what separates him. At light heavyweight, he handled the best in the world the way a craftsman handles amateurs.
+
+The counter: his character issues, the drug test controversies, and the shadow of what might have happened if he'd stayed clean throughout. The performances are undeniable. The context complicates the conversation.
+
+**The Case for Khabib**
+Undefeated at 29-0. Retired as champion. Never in danger of losing a single fight. His grappling was so dominant that world-class wrestlers were unable to defend it. His record has no blemishes — no split decisions, no losses, no surviving a round where he was in real danger.
+
+The counter: limited striking at the highest level, a smaller era of competition, and the fact that he never faced certain stylistic challenges that Jones and Silva faced repeatedly.
+
+**Why There's No Single Answer**
+The GOAT debate in MMA is complicated by weight classes, eras, and the multidimensional nature of the sport. Comparing a dominant wrestler to a dominant striker across different divisions is genuinely impossible to do with precision.
+
+What you can say: all three were so far ahead of their competition during their peak that the sport had to create new vocabulary to describe them. All three changed how their weight class was contested after them. All three belong in any conversation about the greatest fighters in the history of human combat sport.
+
+The debate will continue. That's fine. The sport is richer for having produced all three.`,
+  },
+  {
+    slug: "kids-into-combat-sports-guide",
+    title: "From Rec League to Regional Circuit: A Dad's Guide to Getting Your Kid Into Combat Sports",
+    excerpt: "Your kid wants to fight. Here's how to support them from the first class to real competition — without pushing too hard.",
+    category: "Dads & Family",
+    date: "March 17, 2026",
+    content: `My kid told me they wanted to learn how to fight. My first instinct was wrong — I started researching the best gyms for the most serious training. My second instinct was right: start with the basics, see if they love it, and let the commitment build naturally.
+
+Here's what I've learned about bringing a kid into combat sports the right way.
+
+**Start With the Foundation**
+Wrestling is the base. It teaches takedowns, control, and the fundamental experience of competing physically with another person. Virtually every elite MMA fighter has a wrestling background, and more importantly, wrestling develops the mental toughness and competitive drive that everything else builds on.
+
+BJJ is the second entry point and an excellent complement. It teaches patience, problem-solving under pressure, and how to compete effectively against people who are physically stronger. There is a reason BJJ is growing faster than almost any other martial art.
+
+**Finding the Right Gym**
+The gym culture matters more than the credentials on the wall. Visit on a regular training day, not a showcase day. Watch how the coaches interact with kids, how the older students treat the younger ones, whether fundamentals are being taught or whether there's an emphasis on sparring before technique is solid.
+
+Red flags: coaches who push sparring before a student is ready, gyms that prioritize competitive results over development, environments where intimidation is tolerated.
+
+Green flags: structured curriculum, coaches who explain why, an environment where every student is respected regardless of skill level.
+
+**The Competition Question**
+Not every kid who trains should compete, and competition should never be the point in the early years. Let them fall in love with the training first. Competition is a tool for growth — it accelerates learning and reveals gaps — but it is not the purpose.
+
+When a kid is ready to compete, start small. Local tournaments. Age-appropriate brackets. The goal of early competition is not winning. It is experiencing the pressure, learning to perform when it matters, and developing the emotional toolkit for handling both outcomes.
+
+**What You're Actually Teaching**
+The kid who trains seriously in combat sports learns: discipline, resilience, how to function under pressure, how to lose without quitting, how to win without arrogance. These are character traits. The fighting skill is almost secondary.
+
+Watch your kid after their first real competition loss. How they process it, how they come back to the gym the next week, whether the challenge makes them harder or breaks them — that's the education you're really providing.
+
+Support without pushing. Presence without pressure. That's the dad's job.`,
+  },
 ];
