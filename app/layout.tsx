@@ -3,13 +3,27 @@ import "./globals.css";
 import Nav from "./components/Nav";
 import NetworkBar from "./components/NetworkBar";
 import Link from "next/link";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Barlow_Condensed, Teko, Space_Mono, Inter } from "next/font/google";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const barlowCondensed = Barlow_Condensed({
+  weight: ["400", "600", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
+});
+
+const teko = Teko({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-teko",
+});
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
 });
 
 const inter = Inter({
@@ -94,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`}>
+    <html lang="en" className={`${barlowCondensed.variable} ${teko.variable} ${spaceMono.variable} ${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/site.webmanifest" />
