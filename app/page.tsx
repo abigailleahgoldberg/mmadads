@@ -62,6 +62,20 @@ export default function HomePage() {
           width: "100%",
         }} />
 
+        {/* Octagon SVG background */}
+        <svg aria-hidden="true" style={{ position: 'absolute', right: '-5%', top: '50%', transform: 'translateY(-50%)', width: 'min(70vw, 700px)', height: 'min(70vw, 700px)', opacity: 0.04, pointerEvents: 'none' }} viewBox="0 0 100 100">
+          <polygon points="29.3,5 70.7,5 95,29.3 95,70.7 70.7,95 29.3,95 5,70.7 5,29.3" fill="none" stroke="#EF4444" strokeWidth="2"/>
+          <polygon points="33,10 67,10 90,33 90,67 67,90 33,90 10,67 10,33" fill="none" stroke="#EF4444" strokeWidth="0.8"/>
+          <circle cx="50" cy="50" r="20" fill="none" stroke="#EF4444" strokeWidth="0.5" strokeDasharray="3,3"/>
+          <line x1="5" y1="50" x2="95" y2="50" stroke="#EF4444" strokeWidth="0.4" opacity="0.5"/>
+          <line x1="50" y1="5" x2="50" y2="95" stroke="#EF4444" strokeWidth="0.4" opacity="0.5"/>
+        </svg>
+
+        {/* Corner cut accent — top left */}
+        <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, width: 0, height: 0, borderTop: '120px solid rgba(239,68,68,0.06)', borderRight: '120px solid transparent', pointerEvents: 'none' }} />
+        {/* Corner cut accent — bottom right */}
+        <div aria-hidden="true" style={{ position: 'absolute', bottom: 0, right: 0, width: 0, height: 0, borderBottom: '120px solid rgba(239,68,68,0.06)', borderLeft: '120px solid transparent', pointerEvents: 'none' }} />
+
         <div
           className="hero-content-wrap"
           style={{
