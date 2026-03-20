@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "./components/Nav";
-import NetworkBar from "./components/NetworkBar";
 import Link from "next/link";
 import { Barlow_Condensed, Teko, Space_Mono, Inter } from "next/font/google";
 
@@ -127,7 +126,6 @@ export default function RootLayout({
         }) }} />
       </head>
       <body>
-        <NetworkBar />
         <Nav />
 
         <main>{children}</main>
