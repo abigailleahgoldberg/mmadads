@@ -7,7 +7,58 @@ export interface Post {
   content: string;
 }
 
-export const posts: Post[] = [
+export const posts: Post[
+  {
+    slug: "khamzat-chimaev-vs-robert-whittaker-ufc-308-breakdown",
+    title: "Khamzat vs. Whittaker: Everything a Dad Who Loves MMA Needs to Know",
+    excerpt: "Khamzat Chimaev's wrestling against Robert Whittaker's boxing. Here's what's at stake in the middleweight division and who has the edge.",
+    category: "Analysis",
+    date: "2026-03-23",
+    content: `There are matchups that just make sense on paper, and then there are matchups that make you feel something in your chest when you read the names together. Khamzat Chimaev versus Robert Whittaker is the second kind.
+
+Khamzat is a problem that nobody in the middleweight division has solved. He's 13-0, he's smashed people who were supposed to give him trouble, and the thing that makes him terrifying isn't just the wrestling. It's that the wrestling sets up everything else. Every striker he's faced has had to respect the takedown so much that they can't commit to their combinations. That's the equation he needs to run against Whittaker.
+
+Robert Whittaker is arguably the best pure boxer the UFC middleweight division has ever produced. Two-time champion, one of the few men to go the distance with Israel Adesanya twice, a fighter who has been tested as hard as anyone in the weight class and come out the other side sharper every time. He doesn't panic. He doesn't freeze. When things go wrong he makes adjustments. That's not something most fighters at any level can say.
+
+Here's the honest breakdown of the matchup.
+
+Khamzat's path to victory runs straight through the takedown. If he can get Whittaker to the mat consistently, this fight looks like every other Khamzat fight. He will grind, he will control, he will land heavy ground and pound, and Whittaker will eventually take damage he can't recover from. The wrestling threat also means Whittaker has to fight differently on the feet. He can't plant and throw the way he normally does because Khamzat will shoot the moment he commits. That's the real damage Khamzat's wrestling does before a single takedown lands.
+
+Whittaker's path to victory is keeping the fight on the feet and making Khamzat miss and pay. His footwork is some of the best in the sport. He doesn't stand in front of people and eat shots. He moves, he angles, he counters. If he can make Khamzat look slow on the outside and avoid the takedowns, his boxing will accumulate real damage over the rounds. Whittaker has the cardio to fight at a high pace for all five rounds. Khamzat has never been in a five-round war at this level. We don't know what that version of him looks like.
+
+The question that doesn't have an answer yet is whether Khamzat's chin holds up if Whittaker lands clean. He's been rocked before. Against Burns he went to a dark place early and found his way back, which told us something. But Whittaker hits harder than Burns and hits cleaner than Burns, and landing on someone who is already committed to a takedown is when the real damage happens.
+
+For dads watching this with their kids, this is a masterclass fight in the two fundamental questions MMA always comes down to: can the wrestler get it to the ground, and can the striker make him pay on the way. Every youth wrestling or boxing coach should sit their students down for this one.
+
+My pick: Whittaker by split decision. But I wouldn't bet the mortgage on it.`
+  },
+  {
+    slug: "teaching-your-kid-wrestling-basics-at-home",
+    title: "The Dad's Guide to Teaching Your Kid Wrestling Basics at Home",
+    excerpt: "You don't need a mat room to teach your kid how to defend themselves. Here's where to start, what to prioritize, and how to keep it fun.",
+    category: "Training",
+    date: "2026-03-23",
+    content: `Every dad who watches MMA eventually has the same thought. My kid should know how to handle themselves on the ground. Not because you're raising a fighter. Because the ground is where real fights go, and a kid who doesn't know what to do there is at a serious disadvantage.
+
+The good news is that the basics of wrestling are learnable at home without a mat room, without a coach, and without specialized equipment. You need a soft surface, a willing kid, and about thirty minutes a week.
+
+Here's where to start.
+
+Start with stance and movement. Before any technique, your kid needs to understand how wrestlers move. Athletic stance means feet shoulder-width apart, knees bent, weight forward on the balls of the feet, hands up. This isn't a fighting stance. It's a base. From this position you can shoot, sprawl, or push. Drill this until it's automatic. Walk around the room in stance. Mirror each other. Make it a game.
+
+Teach the sprawl before the shot. Most dads make the mistake of teaching the takedown first. Teach the defense first. A sprawl is the most important thing a smaller or lighter kid can know. When someone shoots at their legs, they drive their hips down and back, sending their legs behind them while pushing the attacker's head down. Drill this slowly. The timing matters more than the speed at this stage. A kid who can sprawl consistently can defend against bigger, stronger opponents on the ground.
+
+Once they have the sprawl, introduce the single leg. Not the double. The single leg takedown is the most practical wrestling technique for self-defense and sport. One hand grabs behind the knee, you step to the outside, lift and drive. Drill the motion slowly and without resistance first. The hip drive is what makes it work, not the arms.
+
+Bridge and roll on the bottom. If your kid ever ends up on their back, they need to know how to move. The basic bridge is lying flat, planting the feet, and explosively driving the hips up. Then roll to one side. This isn't a submission escape, it's a movement skill. Kids who can bridge and move on the ground are much harder to hold down than kids who just lie there.
+
+Keep sessions short and fun. Twenty minutes of live drilling is worth more than an hour of drilling stagnant technique. Give each other small challenges. Who can hold the position for ten seconds? Who can take the back? Let them win sometimes. The goal at this stage is that they leave the session wanting to do it again.
+
+The truth about teaching your kid wrestling at home is that you don't need to know very much. You need to know the sprawl, the single leg, the bridge. You need to drill those three things consistently over months. And you need to make it something they look forward to, not a chore.
+
+When they're ready for a room with real coaches, they'll already have the movement vocabulary that most beginners spend their first year trying to build.`
+  },
+] = [
   {
     slug: "khamzat-chimaev-vs-robert-whittaker-ufc-308-breakdown",
     title: "Khamzat vs. Whittaker: Everything a Dad Who Loves MMA Needs to Know",
