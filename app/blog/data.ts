@@ -9,6 +9,126 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "khamzat-chimaev-vs-robert-whittaker-ufc-308-breakdown",
+    title: "Khamzat vs. Whittaker: Everything a Dad Who Loves MMA Needs to Know",
+    excerpt:
+      "Khamzat's relentless wrestling meets Whittaker's elite boxing. The middleweight title picture is on the line. Here's what you need to know before fight night.",
+    category: "Analysis",
+    date: "March 23, 2026",
+    content: `
+UFC 308 gave us the fight middleweight fans had been circling on the calendar for months: Khamzat Chimaev vs. Robert Whittaker. If you're a dad who watches every card but doesn't have three hours to spend reading long-form breakdowns, this one is for you. Here's what actually matters.
+
+**Who Is Khamzat Chimaev?**
+
+Khamzat is the kind of fighter who makes you feel like you haven't been watching MMA long enough. Born in Chechnya, raised in Sweden, trained out of a camp that has produced multiple world champions. He came into the UFC in 2020 and went 4-0 in 66 days — against actual opponents, not cans. The nickname "Borz" means wolf in Chechen. He fights like one.
+
+His wrestling is the weapon. Division I-level shooting, relentless pressure, the ability to drag you into the deep water and drown you there. When he's closing distance, he's almost impossible to hold off. His grappling transitions are smooth. His ground-and-pound is heavy. And he's added legitimate striking — his boxing has improved every time out.
+
+The question that follows him: how does he handle adversity? His UFC record looks perfect, but he's never been in a war against someone who can hurt him standing. Whittaker is the first man capable of doing that.
+
+**Who Is Robert Whittaker?**
+
+If Khamzat represents the new wave, Whittaker is what happens when a fighter grinds through the school of hard knocks and comes out the other side better for it. "The Reaper" held the middleweight title for years. He lost it to Israel Adesanya twice — hard, painful losses — and came back as a completely rebuilt fighter.
+
+His boxing is legitimately world-class for MMA. Clean combinations, excellent head movement, the kind of timing that makes you look slow even when you're fast. He hits hard enough that even the best defensive wrestlers respect his power and adjust accordingly.
+
+He's been knocked out, he's been hurt, and he's survived moments where other fighters don't get back up. That's not a weakness — it's evidence that he's been tested and knows what to do when things go wrong.
+
+**The Matchup**
+
+This is a pure stylistic collision: elite wrestler versus elite striker.
+
+Khamzat wins if he can get Whittaker to the fence and take him down in the first two rounds. His cardio is elite, but his best work comes when he can wear opponents down with persistent takedown pressure before they can settle into a rhythm. Whittaker's defensive wrestling is solid but not his strongest suit. If Khamzat can make this a grappling fight, he likely wins.
+
+Whittaker wins if he can keep it standing and stay disciplined with his footwork. He cannot walk backward into the fence and brawl. He needs lateral movement, angles, and the patience to counter Khamzat's forward pressure with sharp, accurate punching. A Whittaker jab-cross can stagger anyone. The question is whether he can create the space to land it against someone as relentless as Khamzat.
+
+The X-factor: Khamzat's chin. He's never been truly tested by elite-level power. Whittaker has the tools to be the first man to do that.
+
+**What It Means for the Division**
+
+The middleweight division is genuinely wide open right now. Whoever wins this fight becomes the undisputed number one contender — there's no other conversation to have. A Khamzat win confirms him as the next great middleweight and sets up a title fight that the division desperately needs. A Whittaker win would be one of the best comeback stories in recent memory and would give him a third shot at gold.
+
+This is a fight where the stakes are as high as it gets outside of a title match.
+
+**The Bottom Line**
+
+Watch the first two rounds closely. If Khamzat is getting takedowns and controlling Whittaker against the fence, it's going his way. If Whittaker is moving, landing clean, and keeping the fight standing, he's on track for a decision or a highlight-reel finish. The opening rounds tell the whole story.
+
+It's a great fight. Clear your Saturday night.
+
+---
+
+*All the context you need on both fighters is on [UFC Fight Pass](https://ufcfightpass.com). Watch Whittaker's war with Paulo Costa from UFC 298 and Khamzat's most complete performance against Gilbert Burns to understand what's coming.*
+`,
+  },
+  {
+    slug: "teaching-your-kid-wrestling-basics-at-home",
+    title: "The Dad's Guide to Teaching Your Kid Wrestling Basics at Home",
+    excerpt:
+      "You don't need a gym to give your kid a foundation in wrestling. Basic positions, first moves to teach, how to stay safe, and how to make it something they actually want to do.",
+    category: "Training",
+    date: "March 23, 2026",
+    content: `
+I started drilling with my kid in the living room. No mats, no coach, no YouTube tutorial telling me what to do — just a dad who coaches youth wrestling and wanted to pass something on. A few years later, that kid is competing and winning. The foundation we built at home mattered.
+
+This isn't about turning your living room into a wrestling room. It's about giving your kid the basics before they ever step into a gym, or supplementing what they're already learning. Here's what actually works.
+
+**Start With Safety, Not Moves**
+
+Before anything else: establish rules. You tap, you stop. No elbows to the face. No neck cranks. No one continues if someone says they're hurt. This is not negotiable, and you enforce it consistently from day one.
+
+Kids learn that rules exist for a reason when the rules are explained, not just demanded. "We don't crank necks because necks are fragile and we want to keep training" lands better than "because I said so." That conversation is worth having before you touch the mats.
+
+Get something under your feet. Puzzle mats from any sporting goods store work fine. You don't need a full wrestling room. A 10x10 section of mat on a hard floor changes the risk profile of drilling dramatically. A mat is the first investment worth making.
+
+**The Three Positions Every Kid Should Know**
+
+Before drilling any takedowns, your kid needs to understand position.
+
+**The stance:** Feet shoulder-width apart, dominant foot slightly back, knees bent, weight forward on the balls of your feet. Hips low. Head up. Arms out in front, loose. This is the foundation. Everything in wrestling starts and returns to this.
+
+**The sprawl:** When someone shoots in on your legs, you throw your hips back and drive them down and away. Your hips hit the mat behind you, your weight goes into their upper back. The sprawl is the single most important defensive skill in wrestling and transitions directly to MMA defense.
+
+**The double-leg stance:** Hips drop, head to the outside of the opponent's body, arms wrap around both legs. This is what a takedown entry looks like. Teaching the shape of it — even without live drilling — builds muscle memory.
+
+Drill these positions until they're automatic. Five minutes a day, no resistance, just reps. The body needs to learn the shape before it can execute under pressure.
+
+**First Moves to Teach**
+
+Start with motion, not technique. Chase-and-run drills where one person runs and the other tries to grab their waist from behind. It's fun, it builds athleticism, and it teaches the concept of controlling the body without the pressure of a real technique.
+
+Then: **the stand-up.** From the bottom position (kid is on hands and knees, you're behind them), they drive up to their feet, reach back for your wrist, and step out to the side to break free. This is the most practical self-defense skill in the sequence and kids love it because they get to "escape." Run it slow, then faster, then from different angles.
+
+Then: **the ankle pick.** From your stance, shoot to one knee, grab the ankle with both hands, pull it toward you while pressing into their hip with your shoulder. Simple, effective, and teaches the concept of disrupting balance.
+
+Do not rush to live wrestling before these basics are solid. The point is building the foundation, not seeing who can pin who.
+
+**How to Make It Fun**
+
+The biggest mistake is making it feel like practice instead of play. Kids don't want drills — they want games.
+
+King of the mat: whoever can push the other person off the mat wins. No punching, just pushing and pulling. This teaches base, balance, and grip strength without feeling like work.
+
+Stand-up challenge: start from the bottom position, dad tries to keep kid down, kid tries to stand up. Time it. Try to beat the clock.
+
+Takedown tag: whoever can touch the other person's legs first wins the round. Teaches shooting angles without requiring full takedowns.
+
+Rotate which one of you is "winning" and let your kid figure out why one thing works and another doesn't. The self-discovery matters more than the technique.
+
+**What You're Actually Teaching**
+
+Drilling at home builds more than wrestling skill. It builds the habit of physical practice. It teaches your kid that hard things get easier with repetition. It gives you a shared language — when you watch MMA together and a fighter shoots for a double-leg, your kid knows what that is because you drilled it in the living room.
+
+That shared context is worth as much as any technique. Maybe more.
+
+Start with 15 minutes twice a week. Keep it fun. Tap when you're supposed to tap. The rest takes care of itself.
+
+---
+
+*If your kid catches the bug and wants more structure, look for a youth wrestling club or a local BJJ gym with a kids' program. The foundation you build at home will make their first class dramatically less overwhelming.*
+`,
+  },
+  {
     slug: "jon-jones-stipe-miocic-fight-defined-an-era",
     title: "Jon Jones vs Stipe Miocic: The Fight That Defined an Era",
     excerpt:
