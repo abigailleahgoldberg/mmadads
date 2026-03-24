@@ -46,7 +46,7 @@ export default function DisclaimerPage() {
           </h2>
           <div style={{ background: 'rgba(232,160,32,0.08)', border: '1px solid rgba(232,160,32,0.3)', borderRadius: '6px', padding: '1rem', marginBottom: '1rem' }}>
             <p style={{ lineHeight: 1.8, fontWeight: 600 }}>
-              ⚠️ Betting content on this site is for entertainment purposes only. We do not encourage or facilitate illegal gambling.
+              ️ Betting content on this site is for entertainment purposes only. We do not encourage or facilitate illegal gambling.
             </p>
           </div>
           <p style={{ lineHeight: 1.8 }}>
