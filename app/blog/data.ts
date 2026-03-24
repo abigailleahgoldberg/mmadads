@@ -58,7 +58,6 @@ The truth about teaching your kid wrestling at home is that you don't need to kn
 
 When they're ready for a room with real coaches, they'll already have the movement vocabulary that most beginners spend their first year trying to build.`
   },
-] = [
   {
     slug: "khamzat-chimaev-vs-robert-whittaker-ufc-308-breakdown",
     title: "Khamzat vs. Whittaker: Everything a Dad Who Loves MMA Needs to Know",
