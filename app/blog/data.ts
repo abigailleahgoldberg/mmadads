@@ -7,7 +7,7 @@ export interface Post {
   content: string;
 }
 
-export const posts: Post[
+export const posts: Post[] = [
   {
     slug: "khamzat-chimaev-vs-robert-whittaker-ufc-308-breakdown",
     title: "Khamzat vs. Whittaker: Everything a Dad Who Loves MMA Needs to Know",
