@@ -28,7 +28,7 @@ export default function MMABeginnerGuidePage() {
             <p style={{color:'rgba(255,255,255,0.65)',lineHeight:1.8,fontSize:16}}>{s.b}</p>
           </div>
         ))}
-        <div style={{background:'#111',border:\`1px solid \${G}44\`,padding:'32px',textAlign:'center',marginTop:8}}>
+        <div style={{background:'#111',border:'1px solid ' + G + '44',padding:'32px',textAlign:'center',marginTop:8}}>
           <p style={{fontSize:17,lineHeight:1.7,color:'rgba(255,255,255,0.8)',margin:0}}>The best time to start was five years ago. The second best time is this week. Find a gym near you and go to one class. Just one. That is the only decision you need to make right now.</p>
         </div>
         <div style={{marginTop:48}}><Link href="/blog" style={{color:G,fontWeight:700,textDecoration:'none'}}>← More from MMA Dads</Link></div>
